@@ -1,0 +1,8 @@
+def function():
+    a = input('give me a ')
+    b = input('give me b ')
+    print(a, b)
+
+
+if __name__ == '__main__':
+    function()
