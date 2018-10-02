@@ -101,14 +101,14 @@ def swap_groups(message, instruction, decrypt):
 
 
 def encrypt_decrypt(message_filename, instruction_filename, decrypt):
-    message_file = open(message_filename, "r")
-    message_list = message_file.readlines()
-    instruction_filename = open(instruction_filename, "r")
-    instruction_list = instruction_filename.readlines()
+    with open(message_filename, "r") as message_file:
+        message_list = message_file.readlines()
+    with open(instruction_filename, "r") as instruction_filename:
+        instruction_list = instruction_filename.readlines()
     output_list = ""
     for i in range(0, len(message_list)):
         message, instruction = message_list[i], instruction_list[i]
-        instruction = instruction.split(" ")
+        instruction = instruction.split(";")
         if decrypt:
             instruction = instruction[::-1]
         for j in range(0, len(instruction)):
@@ -128,11 +128,8 @@ def encrypt_decrypt(message_filename, instruction_filename, decrypt):
                 swapped_group_message = swap_groups(message.replace("\n", ""), instruction[j], decrypt)
                 message = swapped_group_message
         output_list += message.replace("\n", "") + "\n"
-    output_file = open("output.txt", "w")
-    output_file.writelines(output_list)
-    output_file.close()
-    message_file.close()
-    instruction_filename.close()
+    with open("output.txt", "w") as output_file:
+        output_file.writelines(output_list)
 
 
 def main():
@@ -141,7 +138,7 @@ def main():
     # duplicate("HOPED", "D2,4")
     # swap("SAUCE", "T3,1")
     # swap_groups("BACKHANDES", "T(4)0,2")
-    encrypt_decrypt("message.txt", "instruction.txt", False)
+    encrypt_decrypt("message.txt", "instruction.txt", True)
 
 
 if __name__ == '__main__':
