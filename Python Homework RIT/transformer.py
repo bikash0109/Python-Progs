@@ -12,6 +12,11 @@ import sys
 
 
 def shift(message, instruction, decrypt):
+    """
+        Method to shift the character at given index (i) by (k) times. If k is not defined, default is 1.
+        :parameter: message - the string which is to be encrypted.
+        :parameter: instruction - instruction to shift the characters.
+    """
     index_to_shifted = int(instruction[1])
     by_times_forward = 1
     if decrypt:
