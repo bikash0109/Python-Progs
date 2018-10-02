@@ -1,4 +1,14 @@
-"""REMOVE ALL PRINT STATEMENTS"""
+__author__ = 'BR'
+__author__ = 'TB'
+
+"""
+Author: BIKASH ROY (Username - br8376)
+Author: TANAY BHARDWAJ (Username - tb7315)
+
+File name: transformer.py
+"""
+
+import sys
 
 
 def shift(message, instruction, decrypt):
@@ -100,11 +110,14 @@ def swap_groups(message, instruction, decrypt):
     return "".join(message)
 
 
-def encrypt_decrypt(message_filename, instruction_filename, decrypt):
-    with open(message_filename, "r") as message_file:
-        message_list = message_file.readlines()
-    with open(instruction_filename, "r") as instruction_filename:
-        instruction_list = instruction_filename.readlines()
+def encrypt_decrypt(message_filename, instruction_filename, output_filename, decrypt):
+    try:
+        with open(message_filename, "r") as message_file:
+            message_list = message_file.readlines()
+        with open(instruction_filename, "r") as instruction_filename:
+            instruction_list = instruction_filename.readlines()
+    except:
+        FileNotFoundError
     output_list = ""
     for i in range(0, len(message_list)):
         message, instruction = message_list[i], instruction_list[i]
@@ -128,17 +141,23 @@ def encrypt_decrypt(message_filename, instruction_filename, decrypt):
                 swapped_group_message = swap_groups(message.replace("\n", ""), instruction[j], decrypt)
                 message = swapped_group_message
         output_list += message.replace("\n", "") + "\n"
-    with open("output.txt", "w") as output_file:
-        output_file.writelines(output_list)
+    try:
+        with open(output_filename, "w") as output_file:
+            output_file.writelines(output_list)
+    except:
+        FileNotFoundError
 
 
 def main():
-    # shift("Z", "S0,-4")
-    # rotate("SEHOR", "R-3")
-    # duplicate("HOPED", "D2,4")
-    # swap("SAUCE", "T3,1")
-    # swap_groups("BACKHANDES", "T(4)0,2")
-    encrypt_decrypt("message.txt", "instruction.txt", True)
+    arguments = sys.argv
+    if len(arguments) != 5:
+        print("Enter -> message file name -> enter instruction file name -> enter output file name -> e/d")
+        return
+    message_file_name = arguments[1] + ".txt"
+    instruction_file_name = arguments[2] + ".txt"
+    output_file_name = arguments[3] + ".txt"
+    is_decrypt = arguments[4] == "d"
+    encrypt_decrypt(message_file_name, instruction_file_name,output_file_name, is_decrypt)
 
 
 if __name__ == '__main__':
