@@ -121,8 +121,8 @@ def encrypt_decrypt(message_filename, instruction_filename, output_filename, dec
             message_list = message_file.readlines()
         with open(instruction_filename, "r") as instruction_filename:
             instruction_list = instruction_filename.readlines()
-    except:
-        FileNotFoundError
+    except FileNotFoundError as fnf:
+        print(fnf)
     output_list = ""
     for i in range(0, len(message_list)):
         message, instruction = message_list[i], instruction_list[i]
