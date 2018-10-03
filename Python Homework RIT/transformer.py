@@ -178,6 +178,9 @@ def encrypt_decrypt(message_filename, instruction_filename, output_filename, dec
         :parameter: decrypt - flag for decryption
         :return: None
     """
+    message_list = ""
+    instruction_list = ""
+    output_list = ""
     try:
         with open(message_filename, "r") as message_file:
             message_list = message_file.readlines()
@@ -185,7 +188,6 @@ def encrypt_decrypt(message_filename, instruction_filename, output_filename, dec
             instruction_list = instruction_filename.readlines()
     except FileNotFoundError as fnf:
         print(fnf)
-    output_list = ""
     for i in range(0, len(message_list)):
         message, instruction = message_list[i], instruction_list[i]
         instruction = instruction.split(";")
@@ -213,7 +215,7 @@ def encrypt_decrypt(message_filename, instruction_filename, output_filename, dec
         output_list += message.replace("\n", "") + "\n"
     try:
         with open(output_filename, "w") as output_file:
-            output_file.writelines(output_list)
+            output_file.write(str(output_list))
     except FileNotFoundError as fnf:
         print(fnf)
 
