@@ -14,8 +14,11 @@ import sys
 def shift(message, instruction, decrypt):
     """
         Method to shift the character at given index (i) by (k) times. If k is not defined, default is 1.
+        - Works on negative operations
         :parameter: message - the string which is to be encrypted.
         :parameter: instruction - instruction to shift the characters.
+        :parameter: decrypt - flag for decryption
+        :return: the new string after transformation
     """
     index_to_shifted = int(instruction[1])
     by_times_forward = 1
@@ -43,6 +46,15 @@ def shift(message, instruction, decrypt):
 
 
 def rotate(message, instruction, decrypt):
+    """
+        Method to rotate the string one position to the right, also can be operated with exponents, which dictates the
+        number of characters to be rotated.
+        - Works on negative operations
+        :parameter: message - the string which is to be encrypted.
+        :parameter: instruction - instruction to rotate the characters.
+        :parameter: decrypt - flag for decryption
+        :return: the new string after transformation
+    """
     if len(instruction) == 1:
         number_of_characters_to_rotates = 1
     else:
@@ -63,7 +75,17 @@ def rotate(message, instruction, decrypt):
         return message
 
 
-def duplicate(message, instruction):
+def duplicate(message, instruction, decrypt):
+    """
+        Method to duplicate (in place) the letter at index i..by k times
+        - Doesn't  work on negative operations
+        :parameter: message - the string which is to be encrypted.
+        :parameter: instruction - instruction to duplicate the characters.
+        :parameter: decrypt - flag for decryption
+        :return: the new string after transformation
+    """
+    if decrypt:
+        return "Duplicate cannot be decrypted."
     index_to_be_duplicated = int(instruction[1])
     if index_to_be_duplicated not in range(0, len(message) - 1):
         return "No character found to be duplicated. Index out of range"
@@ -78,6 +100,14 @@ def duplicate(message, instruction):
 
 
 def swap(message, instruction, decrypt):
+    """
+        Method to swap the letters at index i and index j.
+        - Works on negative operations
+        :parameter: message - the string which is to be encrypted.
+        :parameter: instruction - instruction to swap the characters.
+        :parameter: decrypt - flag for decryption
+        :return: the new string after transformation
+    """
     index_i = int(instruction[1])
     if index_i < 0:
         return "No element to swap. Index smaller than message length"
@@ -95,6 +125,15 @@ def swap(message, instruction, decrypt):
 
 
 def swap_groups(message, instruction, decrypt):
+    """
+        Method swap_groups operates a little differently. In this case, we conceptually divide the string to
+        g equal-sized groups of letters, and then swap groups i and j..
+        - Works on negative operations
+        :parameter: message - the string which is to be encrypted.
+        :parameter: instruction - instruction to swap the groups.
+        :parameter: decrypt - flag for decryption
+        :return: the new string after transformation
+    """
     index_i = int(instruction[4])
     if index_i < 0:
         return "No element to swap. Index smaller than message length"
@@ -115,7 +154,31 @@ def swap_groups(message, instruction, decrypt):
     return "".join(message)
 
 
+def es_rev(message, decrypt):
+    """
+        Method to reverse the message and add a "Z" at the end.
+        - Works on negative operations
+        e.g - HOW -> WOHZ
+        :parameter: message - the string which is to be encrypted.
+        :parameter: decrypt - flag for decryption
+        :return: the new string after transformation
+    """
+    if decrypt:
+        return message[0:len(message)-1][::-1]
+    else:
+        return message[::-1] + "Z"
+
+
 def encrypt_decrypt(message_filename, instruction_filename, output_filename, decrypt):
+    """
+        This method encrypts and decrypts the Messages from message.txt file with the set of instructions from
+        instructions.txt file and writes the output to output.txt file
+        :parameter: message_filename - messages file name to be read.
+        :parameter: instruction_filename - instructions file name to be read.
+        :parameter: output_filename - output file name, where result is stored.
+        :parameter: decrypt - flag for decryption
+        :return: None
+    """
     try:
         with open(message_filename, "r") as message_file:
             message_list = message_file.readlines()
@@ -137,7 +200,7 @@ def encrypt_decrypt(message_filename, instruction_filename, output_filename, dec
                 rotate_message = rotate(message.replace("\n", ""), instruction[j], decrypt)
                 message = rotate_message
             if instruction[j].startswith("D"):
-                duplicated_message = duplicate(message.replace("\n", ""), instruction[j])
+                duplicated_message = duplicate(message.replace("\n", ""), instruction[j], decrypt)
                 message = duplicated_message
             if instruction[j].startswith("T"):
                 swapped_message = swap(message.replace("\n", ""), instruction[j], decrypt)
@@ -145,15 +208,22 @@ def encrypt_decrypt(message_filename, instruction_filename, output_filename, dec
             if instruction[j].startswith("T("):
                 swapped_group_message = swap_groups(message.replace("\n", ""), instruction[j], decrypt)
                 message = swapped_group_message
+            if instruction[j].startswith("E"):
+                rev_message = es_rev(message.replace("\n", ""), decrypt)
+                message = rev_message
         output_list += message.replace("\n", "") + "\n"
     try:
         with open(output_filename, "w") as output_file:
             output_file.writelines(output_list)
-    except:
-        FileNotFoundError
+    except FileNotFoundError as fnf:
+        print(fnf)
 
 
 def main():
+    """
+        The main method.
+        Arguments are taken in form the command line.
+    """
     arguments = sys.argv
     if len(arguments) != 5:
         print("Enter -> message file name -> enter instruction file name -> enter output file name -> e/d")
@@ -162,7 +232,9 @@ def main():
     instruction_file_name = arguments[2] + ".txt"
     output_file_name = arguments[3] + ".txt"
     is_decrypt = arguments[4] == "d"
-    encrypt_decrypt(message_file_name, instruction_file_name,output_file_name, is_decrypt)
+    if is_decrypt:
+        message_file_name = output_file_name
+    encrypt_decrypt(message_file_name, instruction_file_name, output_file_name, is_decrypt)
 
 
 if __name__ == '__main__':
