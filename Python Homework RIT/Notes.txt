@@ -1,0 +1,39 @@
+def test_merge_sort():
+  """test function for verifying algorithm correctness"""
+
+  import random
+  import time
+
+  sample_size = 5000
+  sample_data = random.sample(range(sample_size*5), sample_size)
+  print ('Sample size: ', sample_size)
+
+  begin = time.time()
+  sample_data = [5,4,3,2,1]
+  result = merge_sort_iterative(sample_data)
+  end = time.time()
+  expected = sorted(sample_data)
+  print ('Sorting time: %f \'secs'%(end-begin))
+
+  assert result == expected, 'Algorithm failed'
+  print ('Algorithm correct')
+
+
+# test_merge_sort()
+
+
+    for j in range(1, len(data)):
+        j *= 2
+        for i in range(0, len(data), j):
+            data_1 = data[i:i + (j // 2)]
+            data_2 = data[i + (j // 2):j - i]
+            k = m = 0
+            while k < len(data_1) and m < len(data_2):
+                if data_1[k] < data_2[m]:
+                    m += 1
+                elif data_1[k] > data_2[m]:
+                    data_1[k], data_2[m] = data_2[m], data_1[k]
+                    k += 1
+            data[i:i + (j // 2)], data[i + (j // 2):j - i] = data_1, data_2
+
+    return data

@@ -10,6 +10,7 @@ File name: transformer.py
 
 import sys
 
+
 def shift(message, instruction, decrypt):
     """
         Method to shift the character at given index (i) by (k) times. If k is not defined, default is 1.
