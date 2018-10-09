@@ -115,78 +115,76 @@ def output_to_file():
         print(fnf)
 
 
-sample_data1 = generate_data(1000000)
-print(clock_ssort(sample_data1, 1000000))
+def main():
+    """
+        The main method.
+        Arguments are taken in form the command line.
+    """
+    arguments = sys.argv
+    n = int(arguments[1])
+    if n < 0:
+        print("Enter a positive number.")
+        return
+    print("Printing result for entered N.")
+    print("Algorithm\t\t\t\t\t\tN\t\t\tComparison\t\t\tSeconds")
+    sample_data = generate_data(n)
+    output_list = ""
+    output_list += clock_qsort(sample_data, n)
+    output_list += clock_ssort(sample_data, n)
+    output_list += clock_msort(sample_data, n)
+    output_list += clock_isort(sample_data, n)
+    print(output_list)
+    print("*************************************************************************************************")
+
+    print("Printing results to generate and check sort.")
+    print("Calling Selection sort:")
+    print("Given an unsorted data below as:")
+    unsorted_data_for_selection_sort = generate_data(15)
+    print(unsorted_data_for_selection_sort)
+    print("Check if its sorted:  Calling check_sorted() :", check_sorted(unsorted_data_for_selection_sort))
+    print("Sorting data...")
+    instrumented_sort.ssort(unsorted_data_for_selection_sort)
+    print("Check if its sorted:  Calling check_sorted() :", check_sorted(unsorted_data_for_selection_sort))
+    print(unsorted_data_for_selection_sort)
+    print("*************************************************************************************************")
+
+    print("Calling Merge sort:")
+    print("Given an unsorted data below as:")
+    unsorted_data_for_merge_sort = generate_data(15)
+    print(unsorted_data_for_merge_sort)
+    print("Check if its sorted:  Calling check_sorted() :", check_sorted(unsorted_data_for_merge_sort))
+    print("Sorting data...")
+    instrumented_sort.msort(unsorted_data_for_merge_sort)
+    print("Check if its sorted:  Calling check_sorted() :", check_sorted(unsorted_data_for_merge_sort))
+    print(unsorted_data_for_merge_sort)
+    print("*************************************************************************************************")
+
+    print("Calling Insertion sort:")
+    print("Given an unsorted data below as:")
+    unsorted_data_for_insertion_sort = generate_data(15)
+    print(unsorted_data_for_insertion_sort)
+    print("Check if its sorted:  Calling check_sorted() :", check_sorted(unsorted_data_for_insertion_sort))
+    print("Sorting data...")
+    instrumented_sort.isort(unsorted_data_for_insertion_sort)
+    print("Check if its sorted:  Calling check_sorted() :", check_sorted(unsorted_data_for_insertion_sort))
+    print(unsorted_data_for_insertion_sort)
+    print("*************************************************************************************************")
+
+    print("Calling Quick sort:")
+    print("Given an unsorted data below as:")
+    unsorted_data_for_quick_sort = generate_data(15)
+    print(unsorted_data_for_quick_sort)
+    print("Check if its sorted:  Calling check_sorted() :", check_sorted(unsorted_data_for_quick_sort))
+    print("Sorting data...")
+    instrumented_sort.qsort(unsorted_data_for_quick_sort)
+    print("Check if its sorted:  Calling check_sorted() :", check_sorted(unsorted_data_for_quick_sort))
+    print(unsorted_data_for_quick_sort)
+    print("*************************************************************************************************")
+
+    print("Printing ... Observation.txt file for [1,10,100,1000,10000] N data for all the sort algorithms.")
+    output_to_file()
+    print("Printing done!")
 
 
-# def main():
-#     """
-#         The main method.
-#         Arguments are taken in form the command line.
-#     """
-#     arguments = sys.argv
-#     n = int(arguments[1])
-#     if n < 0:
-#         print("Enter a positive number.")
-#         return
-#     print("Algorithm\t\t\t\t\t\tN\t\t\tComparison\t\t\tSeconds")
-#     sample_data = generate_data(n)
-#     output_list = ""
-#     output_list += clock_qsort(sample_data, n)
-#     output_list += clock_ssort(sample_data, n)
-#     output_list += clock_msort(sample_data, n)
-#     output_list += clock_isort(sample_data, n)
-#     print(output_list)
-#     print("*************************************************************************************************")
-#
-#     print("Calling Selection sort:")
-#     print("Given an unsorted data below as:")
-#     unsorted_data_for_selection_sort = generate_data(15)
-#     print(unsorted_data_for_selection_sort)
-#     print("Check if its sorted:  Calling check_sorted() :", check_sorted(unsorted_data_for_selection_sort))
-#     print("Sorting data...")
-#     instrumented_sort.ssort(unsorted_data_for_selection_sort)
-#     print("Check if its sorted:  Calling check_sorted() :", check_sorted(unsorted_data_for_selection_sort))
-#     print(unsorted_data_for_selection_sort)
-#     print("*************************************************************************************************")
-#
-#     print("Calling Merge sort:")
-#     print("Given an unsorted data below as:")
-#     unsorted_data_for_merge_sort = generate_data(15)
-#     print(unsorted_data_for_merge_sort)
-#     print("Check if its sorted:  Calling check_sorted() :", check_sorted(unsorted_data_for_merge_sort))
-#     print("Sorting data...")
-#     instrumented_sort.msort(unsorted_data_for_merge_sort)
-#     print("Check if its sorted:  Calling check_sorted() :", check_sorted(unsorted_data_for_merge_sort))
-#     print(unsorted_data_for_merge_sort)
-#     print("*************************************************************************************************")
-#
-#     print("Calling Insertion sort:")
-#     print("Given an unsorted data below as:")
-#     unsorted_data_for_insertion_sort = generate_data(15)
-#     print(unsorted_data_for_insertion_sort)
-#     print("Check if its sorted:  Calling check_sorted() :", check_sorted(unsorted_data_for_insertion_sort))
-#     print("Sorting data...")
-#     instrumented_sort.isort(unsorted_data_for_insertion_sort)
-#     print("Check if its sorted:  Calling check_sorted() :", check_sorted(unsorted_data_for_insertion_sort))
-#     print(unsorted_data_for_insertion_sort)
-#     print("*************************************************************************************************")
-#
-#     print("Calling Quick sort:")
-#     print("Given an unsorted data below as:")
-#     unsorted_data_for_quick_sort = generate_data(15)
-#     print(unsorted_data_for_quick_sort)
-#     print("Check if its sorted:  Calling check_sorted() :", check_sorted(unsorted_data_for_quick_sort))
-#     print("Sorting data...")
-#     instrumented_sort.qsort(unsorted_data_for_quick_sort)
-#     print("Check if its sorted:  Calling check_sorted() :", check_sorted(unsorted_data_for_quick_sort))
-#     print(unsorted_data_for_quick_sort)
-#     print("*************************************************************************************************")
-#
-#     print("Printing ... Observation.txt file for [1,10,100,1000,10000] N data for all the sort algorithms.")
-#     output_to_file()
-#     print("Print done!")
-#
-#
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    main()
