@@ -1,4 +1,20 @@
+__author__ = 'BR'
+__author__ = 'TB'
+
+"""
+Author: BIKASH ROY (Username - br8376)
+Author: TANAY BHARDWAJ (Username - tb7315)
+
+File name: instrumented_sort.py
+"""
+
+
 def ssort(unsorted_list):
+    """
+       Method to perform selection sort.
+       :parameter: unsorted_list - the list, which is to be sorted
+       :return: the sorted list and the number of comparisons done
+    """
     number_of_comparisons = 0
     for i in range(len(unsorted_list)):
         min_idx = i
@@ -13,6 +29,11 @@ def ssort(unsorted_list):
 
 
 def msort(unsorted_list):
+    """
+        Method to perform merge sort.
+        :parameter: unsorted_list - the list, which is to be sorted
+        :return: the sorted list and the number of comparisons done
+    """
     number_of_comparisons = 0
 
     if len(unsorted_list) > 1:
@@ -57,6 +78,11 @@ def msort(unsorted_list):
 
 # Function to do insertion sort
 def isort(unsorted_list):
+    """
+        Method to perform insertion sort.
+        :parameter: unsorted_list - the list, which is to be sorted
+        :return: the sorted list and the number of comparisons done
+    """
     k = 0
     comparisons = 0
     while k + 1 <= len(unsorted_list) - 1:
@@ -72,7 +98,26 @@ def isort(unsorted_list):
     return unsorted_list, comparisons
 
 
+def qsort(unsorted_list):
+    """
+        Method to perform quick sort.
+        :parameter: unsorted_list - the list, which is to be sorted
+        :return: the sorted list and the number of comparisons done
+        Note : This method to written, just to capture number of comparisons and sorted list in same tuple
+    """
+    number_of_comparisons = quick_sort(unsorted_list, 0, len(unsorted_list) - 1, 0)
+    return unsorted_list, number_of_comparisons
+
+
 def partition(unsorted_list, start, end, number_of_comparisons):
+    """
+        Method to perform quick sort partition, where pivot is picked up.
+        :parameter: unsorted_list - the list, which is to be sorted
+        :parameter: start - the start index of the list
+        :parameter: end - the end index of the list
+        :parameter: number_of_comparisons - number of comparisons made so far.
+        :return: the sorted list and the number of comparisons done
+    """
     pos = start
     for i in range(start, end):
         number_of_comparisons += 1
@@ -84,14 +129,18 @@ def partition(unsorted_list, start, end, number_of_comparisons):
 
 
 def quick_sort(unsorted_list, start, end, number_of_comparisons):
+    """
+        Method to perform quick sort pivot breakup.
+        :parameter: unsorted_list - the list, which is to be sorted
+        :parameter: start - the start index of the list
+        :parameter: end - the end index of the list
+        :parameter: number_of_comparisons - number of comparisons made so far.
+        :return: the sorted list and the number of comparisons done
+    """
     if start < end:
         pos, number_of_comparisons = partition(unsorted_list, start, end, number_of_comparisons)
         number_of_comparisons = quick_sort(unsorted_list, start, pos - 1, number_of_comparisons)
         number_of_comparisons = quick_sort(unsorted_list, pos + 1, end, number_of_comparisons)
     return number_of_comparisons
 
-
-def qsort(unsorted_list):
-    number_of_comparisons = quick_sort(unsorted_list, 0, len(unsorted_list) - 1, 0)
-    return unsorted_list, number_of_comparisons
 
