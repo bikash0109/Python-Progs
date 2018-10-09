@@ -37,3 +37,15 @@ def test_merge_sort():
             data[i:i + (j // 2)], data[i + (j // 2):j - i] = data_1, data_2
 
     return data
+
+
+
+    number_of_comparisons = 0
+    for i in range(1, len(unsorted_list)):
+        k = unsorted_list[i]
+        j = i - 1
+        while j >= 0 and k < unsorted_list[j]:
+            unsorted_list[j + 1] = unsorted_list[j]
+            j -= 1
+            unsorted_list[j + 1] = k
+    return unsorted_list, number_of_comparisons

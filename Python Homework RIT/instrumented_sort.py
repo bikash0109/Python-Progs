@@ -1,4 +1,3 @@
-
 def ssort(unsorted_list):
     number_of_comparisons = 0
     for i in range(len(unsorted_list)):
@@ -53,4 +52,45 @@ def msort(unsorted_list):
             k = k + 1
             number_of_comparisons += 1
 
+    return unsorted_list, number_of_comparisons
+
+
+# Function to do insertion sort
+def isort(unsorted_list):
+    k = 0
+    comparisons = 0
+    while k + 1 <= len(unsorted_list) - 1:
+        index = k + 1
+        curr_val = unsorted_list[index]
+        comparisons += 1
+        while index > 0 and unsorted_list[index - 1] > curr_val:
+            unsorted_list[index] = unsorted_list[index - 1]
+            index = index - 1
+            comparisons += 1
+            unsorted_list[index] = curr_val
+        k = k + 1
+    return unsorted_list, comparisons
+
+
+def partition(unsorted_list, start, end, number_of_comparisons):
+    pos = start
+    for i in range(start, end):
+        number_of_comparisons += 1
+        if unsorted_list[i] < unsorted_list[end]:
+            unsorted_list[i], unsorted_list[pos] = unsorted_list[pos], unsorted_list[i]
+            pos += 1
+    unsorted_list[pos], unsorted_list[end] = unsorted_list[end], unsorted_list[pos]
+    return pos, number_of_comparisons
+
+
+def quick_sort(unsorted_list, start, end, number_of_comparisons):
+    if start < end:
+        pos, number_of_comparisons = partition(unsorted_list, start, end, number_of_comparisons)
+        number_of_comparisons = quick_sort(unsorted_list, start, pos - 1, number_of_comparisons)
+        number_of_comparisons = quick_sort(unsorted_list, pos + 1, end, number_of_comparisons)
+    return number_of_comparisons
+
+
+def qsort(unsorted_list):
+    number_of_comparisons = quick_sort(unsorted_list, 0, len(unsorted_list) - 1, 0)
     return unsorted_list, number_of_comparisons
