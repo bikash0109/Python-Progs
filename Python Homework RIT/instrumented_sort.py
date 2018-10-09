@@ -94,3 +94,4 @@ def quick_sort(unsorted_list, start, end, number_of_comparisons):
 def qsort(unsorted_list):
     number_of_comparisons = quick_sort(unsorted_list, 0, len(unsorted_list) - 1, 0)
     return unsorted_list, number_of_comparisons
+
