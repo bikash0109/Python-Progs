@@ -102,10 +102,10 @@ def output_to_file():
     output_list = "Algorithm\t\t\t\t\t\tN\t\t\t\t\t\tComparison\t\t\t\t\t\tSeconds"
     for n in [1, 10, 100, 1000, 10000]:
         sample_data = generate_data(n)
-        output_list += clock_qsort(sample_data, n)
-        output_list += clock_ssort(sample_data, n)
-        output_list += clock_msort(sample_data, n)
-        output_list += clock_isort(sample_data, n)
+        output_list += clock_qsort(sample_data.copy(), n)
+        output_list += clock_ssort(sample_data.copy(), n)
+        output_list += clock_msort(sample_data.copy(), n)
+        output_list += clock_isort(sample_data.copy(), n)
         output_list += "\n****************************************************************************************" \
                        "**************************"
     try:
