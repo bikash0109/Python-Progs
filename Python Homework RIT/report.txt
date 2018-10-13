@@ -8,11 +8,20 @@ Author: TANAY BHARDWAJ (Username - tb7315)
 File name: report.txt
 """
 
-According to the observation.txt, its clear that as the data size increases, efficiency of merge sort better than
+For Observation.txt
+We have made a function, which runs through the array of [1,10,100,1000,10000], to generate random lists of N elements
+to be used as a list to be sorted. Then we call in the timer function, and execute one sorting algorithm and stop the
+timer, we calculate the time difference which gives us the execution time of the sort algorithm.
+We also count the number of comparisons made by each algorithms and save all this data in a sting, and write it to a
+file in a tabular format.
+
+
+According to the observation.txt, its clear that as the data size increases, efficiency of merge sort is better than
 Selection sort, as because its a divide and conquer algorithm, it has more advantage over sequential algorithms.
 
 As we can see, as the size of list grows, the number of comparisons made are significantly higher in selection sort,
-while in merge sort, we know for sure, that half part of the array is sorted.
+while in merge sort, we know for sure, that half part of the array is sorted so the comparisons are skipped by many
+folds.
 
 while trying for 10^6 N, merge sort came up in 11.22 seconds, where as selection sort, went on for 10 minutes and still
 no output.

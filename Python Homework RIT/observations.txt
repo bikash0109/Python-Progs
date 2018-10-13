@@ -1,26 +1,26 @@
 Algorithm						N						Comparison						Seconds
-Quick Sort						1                        0                      0.000004secs
-Selection Sort					1                        0                      0.000006secs
+Quick Sort						1                        0                      0.000003secs
+Selection Sort					1                        0                      0.000005secs
 Merge Sort						1                        0                      0.000002secs
 Insertion Sort					1                        0                      0.000002secs
 ******************************************************************************************************************
-Quick Sort						10                       27                      0.000028secs
-Selection Sort					10                       45                      0.000026secs
-Merge Sort						10                       34                      0.000058secs
-Insertion Sort					10                       37                      0.000025secs
+Quick Sort						10                       22                      0.000027secs
+Selection Sort					10                       45                      0.000027secs
+Merge Sort						10                       34                      0.000060secs
+Insertion Sort					10                       35                      0.000026secs
 ******************************************************************************************************************
-Quick Sort						100                      608                      0.000382secs
-Selection Sort					100                     4950                      0.000835secs
-Merge Sort						100                      672                      0.000460secs
-Insertion Sort					100                     2598                      0.000822secs
+Quick Sort						100                      696                      0.000433secs
+Selection Sort					100                     4950                      0.001407secs
+Merge Sort						100                      672                      0.000509secs
+Insertion Sort					100                     2711                      0.001012secs
 ******************************************************************************************************************
-Quick Sort						1000                    12108                      0.003579secs
-Selection Sort					1000                   499500                      0.073493secs
-Merge Sort						1000                     9976                      0.005924secs
-Insertion Sort					1000                   246312                      0.083012secs
+Quick Sort						1000                    11035                      0.003419secs
+Selection Sort					1000                   499500                      0.074930secs
+Merge Sort						1000                     9976                      0.006057secs
+Insertion Sort					1000                   253276                      0.100706secs
 ******************************************************************************************************************
-Quick Sort						10000                   156597                      0.044740secs
-Selection Sort					10000                 49995000                      7.352970secs
-Merge Sort						10000                   133616                      0.080416secs
-Insertion Sort					10000                 25199381                      8.816491secs
+Quick Sort						10000                   150512                      0.070929secs
+Selection Sort					10000                 49995000                      7.662039secs
+Merge Sort						10000                   133616                      0.079002secs
+Insertion Sort					10000                 24754950                      8.687815secs
 ******************************************************************************************************************

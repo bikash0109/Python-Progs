@@ -144,3 +144,6 @@ def quick_sort(unsorted_list, start, end, number_of_comparisons):
     return number_of_comparisons
 
 
+lista = ["c", "a", "b"]
+ssort(lista)
+print(lista)
