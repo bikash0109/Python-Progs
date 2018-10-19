@@ -65,13 +65,11 @@ def msort(unsorted_list):
             unsorted_list[k] = left[i]
             i = i + 1
             k = k + 1
-            number_of_comparisons += 1
 
         while j < len(right):
             unsorted_list[k] = right[j]
             j = j + 1
             k = k + 1
-            number_of_comparisons += 1
 
     return unsorted_list, number_of_comparisons
 

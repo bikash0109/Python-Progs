@@ -87,7 +87,7 @@ def duplicate(message, instruction, decrypt):
     if decrypt:
         return "Duplicate cannot be decrypted."
     index_to_be_duplicated = int(instruction[1])
-    if index_to_be_duplicated not in range(0, len(message) - 1):
+    if index_to_be_duplicated not in range(0, len(message)):
         return "No character found to be duplicated. Index out of range"
     condition_for_k_duplicate = "," in instruction and instruction.split(",")[1] != ""
     duplicate_by_times = 1
@@ -190,7 +190,7 @@ def encrypt_decrypt(message_filename, instruction_filename, output_filename, dec
     except FileNotFoundError as fnf:
         print(fnf)
     for i in range(0, len(message_list)):
-        message, instruction = message_list[i], instruction_list[i]
+        message, instruction = message_list[i], instruction_list[i].strip()
         instruction = instruction.split(";")
         if decrypt:
             instruction = instruction[::-1]
@@ -204,7 +204,7 @@ def encrypt_decrypt(message_filename, instruction_filename, output_filename, dec
             if instruction[j].startswith("D"):
                 duplicated_message = duplicate(message.replace("\n", ""), instruction[j], decrypt)
                 message = duplicated_message
-            if instruction[j].startswith("T"):
+            if instruction[j].startswith("T") and "(" not in instruction[j]:
                 swapped_message = swap(message.replace("\n", ""), instruction[j], decrypt)
                 message = swapped_message
             if instruction[j].startswith("T("):

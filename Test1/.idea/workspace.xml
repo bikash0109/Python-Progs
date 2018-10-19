@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cab4631f-00dd-4f99-b1af-4673defb9ccd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Ok.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Python Homework RIT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Python Homework RIT/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Python Homework RIT/instruction.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Python Homework RIT/instruction.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Python Homework RIT/instrumented_sort.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Python Homework RIT/instrumented_sort.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Python Homework RIT/message.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Python Homework RIT/message.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Python Homework RIT/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Python Homework RIT/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Python Homework RIT/transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Python Homework RIT/transformer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,10 +24,11 @@
     <session id="-46160642">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -60,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/practical.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="34" column="25" lean-forward="true" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+            <state relative-caret-position="510">
+              <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
               <folding>
                 <marker date="1539294259474" expanded="true" signature="40:325" ph="..." />
                 <marker date="1539294259474" expanded="true" signature="1174:1302" ph="..." />
@@ -75,7 +80,7 @@
         <entry file="file://$PROJECT_DIR$/Ok.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="679">
-              <caret line="130" column="19" lean-forward="true" selection-start-line="130" selection-start-column="19" selection-end-line="130" selection-end-column="19" />
+              <caret line="130" column="19" selection-start-line="130" selection-start-column="19" selection-end-line="130" selection-end-column="19" />
               <folding>
                 <marker date="1539721487417" expanded="true" signature="707:714" ph="..." />
                 <marker date="1539721487417" expanded="true" signature="1023:1109" ph="..." />
@@ -88,9 +93,7 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Python Homework RIT/instrumented_sort.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-941" />
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -141,6 +144,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -152,7 +156,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -245,7 +248,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08869814" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08941345" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -294,22 +297,10 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Notes.txt" />
-    <entry file="file://$PROJECT_DIR$/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Python Homework RIT/instrumented_sort.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-941" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/practical.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="34" column="25" lean-forward="true" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+        <state relative-caret-position="510">
+          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
           <folding>
             <marker date="1539294259474" expanded="true" signature="40:325" ph="..." />
             <marker date="1539294259474" expanded="true" signature="1174:1302" ph="..." />
@@ -318,10 +309,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../Python Homework RIT/instrumented_sort.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Ok.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="679">
-          <caret line="130" column="19" lean-forward="true" selection-start-line="130" selection-start-column="19" selection-end-line="130" selection-end-column="19" />
+          <caret line="130" column="19" selection-start-line="130" selection-start-column="19" selection-end-line="130" selection-end-column="19" />
           <folding>
             <marker date="1539721487417" expanded="true" signature="707:714" ph="..." />
             <marker date="1539721487417" expanded="true" signature="1023:1109" ph="..." />
