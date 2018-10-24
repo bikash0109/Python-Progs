@@ -51,6 +51,7 @@ def msort(unsorted_list):
 
 def linear_search(list_to_be_searched, word_to_be_searched):
     for i in range(len(list_to_be_searched)):
+        print(i)
         if list_to_be_searched[i] == word_to_be_searched:
             return i
 
