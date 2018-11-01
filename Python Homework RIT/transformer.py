@@ -190,7 +190,7 @@ def encrypt_decrypt(message_filename, instruction_filename, output_filename, dec
     except FileNotFoundError as fnf:
         print(fnf)
     for i in range(0, len(message_list)):
-        message, instruction = message_list[i], instruction_list[i].strip()
+        message, instruction = message_list[i], instruction_list[i].strip() if i < len(instruction_list) else ""
         instruction = instruction.split(";")
         if decrypt:
             instruction = instruction[::-1]
