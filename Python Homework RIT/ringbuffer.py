@@ -1,17 +1,3 @@
-class Node:
-    def __init__(self, element=None, next_node=None):
-        self.element = element
-        self.next_node = next_node
-
-    def __str__(self):
-        if self.element:
-            return self.element.__str__()
-        else:
-            return 'Empty Node'
-
-    def __repr__(self):
-        return self.__str__()
-
 
 class RingBuffer:
     def __init__(self, size):
