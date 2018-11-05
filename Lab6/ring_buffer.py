@@ -1,108 +1,165 @@
-class Node(object):
+__author__ = 'BR'
 
-    def __init__(self, d, n=None):
-        self.data = d
-        self.next_node = n
+"""
+Author: BIKASH ROY (Username - br8376)
 
-    def get_next(self):
-        return self.next_node
-
-    def set_next(self, n):
-        self.next_node = n
-
-    def get_data(self):
-        return self.data
-
-    def set_data(self, d):
-        self.data = d
-
-    def to_string(self):
-        return str(self.data)
+File name: ring_buffer.py
+"""
 
 
-class RingBuffer(object):
-
-    def __init__(self, r=None):
-        self.root = r
-        self.size = 0
+class Node:
+    '''
+        A node class to achieve linked structure in ring buffer
+    '''
+    def __init__(self, element, next_node=None):
+        self.element = element
+        self.next_node = next_node
 
     def __str__(self):
-        a = "["
-        if self.root is None:
-            a += None
-        this_node = self.root
-        a += this_node.to_string() + " "
-        while this_node.get_next() != self.root:
-            this_node = this_node.get_next()
-            a += this_node.to_string() + " "
-        return a.strip() + "]"
-
-    def get_size(self):
-        return self.size
-
-    def add(self, d):
-        if self.get_size() == 0:
-            self.root = Node(d)
-            self.root.set_next(self.root)
+        if self.element:
+            return self.element.__str__()
         else:
-            new_node = Node(d, self.root.get_next())
-            self.root.set_next(new_node)
-        self.size += 1
+            return 'None'
 
-    def remove(self, d):
-        this_node = self.root
-        prev_node = None
+    def __repr__(self):
+        return self.__str__()
 
-        while True:
-            if this_node.get_data() == d:  # found
-                if prev_node is not None:
-                    prev_node.set_next(this_node.get_next())
-                else:
-                    while this_node.get_next() != self.root:
-                        this_node = this_node.get_next()
-                    this_node.set_next(self.root.get_next())
-                    self.root = self.root.get_next()
-                self.size -= 1
-                return True  # data removed
-            elif this_node.get_next() == self.root:
-                return False  # data not found
-            prev_node = this_node
-            this_node = this_node.get_next()
+
+class RingBuffer:
+    '''
+        A ring buffer, where last is pointing to first element in a list
+    '''
+    def __init__(self, capacity):
+        '''
+            Constructor -
+            :parameter: capacity - max buffer size
+        '''
+        self._capacity = capacity
+        self.element = [Node(None) for i in range(self._capacity)]
+        self.head = self.element[0]
+        self.tail = self.element[self._capacity - 1]
+        self.tail.next_node = self.head
+        self._size = 0
+
+    def __str__(self):
+        '''
+              A toString equivalent of java, which returns the string representation of the class
+        '''
+        if self.element:
+            return self.element.__str__()
+        else:
+            return 'None'
+
+    def get_head(self):
+        '''
+            Returns the start of the buffer
+        '''
+        return self.element[0]
+
+    def get_tail(self):
+        '''
+            Returns end of the buffer
+        '''
+        self.element[self._capacity - 1].next_node = self.get_head()
+        return self.element[self.capacity() - 1]
+
+    def capacity(self):
+        '''
+            Returns maximum buffer size
+        '''
+        return self._capacity
+
+    def size(self):
+        '''
+            Returns size of the buffer
+        '''
+        return self._size
+
+    def remove_oldest(self):
+        '''
+            Remove the oldest data from the buffer
+        '''
+        self.element.pop(0)
+
+    def remove_newest(self):
+        '''
+            Remove the newest data from the buffer
+        '''
+        self.element.pop(self._capacity - 1)
+
+    def insert_keep_new(self, x):
+        '''
+            A special insert, where recent data is kept, and oldest data a dropped
+        '''
+        new_node = Node(x, Node(self.get_head()))
+        self.element[self._capacity - 1].next_node = new_node
+        self.remove_oldest()
+        self.element.append(new_node)
+        if self.size() < self.capacity():
+            self._size += 1
+
+    def insert_keep_old(self, x):
+        '''
+           A special insert, where recent data is dropped, and oldest data a kept
+        '''
+        new_node = Node(x, Node(self.get_head()))
+        if self.element[0].element is None:
+            self.element[self._capacity - 1].next_node = new_node
+            self.remove_oldest()
+            self.element.append(new_node)
+            if self.size() < self.capacity():
+                self._size += 1
+        else:
+            self.element[self._capacity - 2].next_node = new_node
+            self.remove_newest()
+            self.element.append(new_node)
 
     def find(self, d):
-        this_node = self.root
-        while True:
-            if this_node.get_data() == d:
-                return d
-            elif this_node.get_next() == self.root:
-                return False
-            this_node = this_node.get_next()
+        '''
+           Find the passed value and returns the cursor
+        '''
+        counter = 0
+        value_found = False
+        this_node = self.get_tail()
+        while counter < self.capacity():
+            if this_node.element == d:
+                value_found = True
+                return this_node
+            this_node = this_node.next_node
+            counter += 1
+        if value_found is False:
+            return value_found
+
+    def replace(self, cursor, value):
+        '''
+           Replaces a value in a given position
+        '''
+        if cursor > self._capacity or cursor < 0 :
+            print("Index not found")
+        self.element[cursor].element = value
 
 
+def test():
+    '''
+       A test method for ring buffer
+    '''
+    a = RingBuffer(3)
+    b = RingBuffer(3)
+
+    print('RingBuffer on a', a)
+    print('RingBuffer on b', b)
+    for val in range(1, 4):
+        a.insert_keep_new(val)
+        print("\na")
+        print(a)
+        # won't fit all
+        b.insert_keep_old(val)
+        print("\nb")
+        print(b)
 
 
-def main():
-    myList = RingBuffer()
-    myList.add(5)
-    myList.add(7)
-    myList.add(3)
-    myList.add(8)
-    myList.add(9)
-    print("Find 8", myList.find(8))
-    print("Find 12", myList.find(12))
-
-    cur = myList.root
-    for i in range(8):
-        cur = cur.get_next();
-
-    print("size=" + str(myList.get_size()))
-    print(myList)
-    myList.remove(8)
-    print("size=" + str(myList.get_size()))
-    print("Remove 15", myList.remove(15))
-    print("size=" + str(myList.get_size()))
-    myList.remove(5)  # delete root node
-    print(myList)
-
-
-main()
+if __name__ == '__main__':
+    '''
+         Driver main
+    '''
+    test()

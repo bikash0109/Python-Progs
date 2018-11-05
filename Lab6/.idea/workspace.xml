@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="503c2816-ec5c-4692-9c0e-64c3590e99f8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ring_buffer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/router_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Python Homework RIT/ring_buffer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Python Homework RIT/router_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../circular.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/Python Progs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/Python Progs.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Python Homework RIT/.idea/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Python Homework RIT/ListQueue.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Python Homework RIT/ListStack.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Lab6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Lab6.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ListStack.py" beforeDir="false" afterPath="$PROJECT_DIR$/ListStack.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ring_buffer.py" beforeDir="false" afterPath="$PROJECT_DIR$/ring_buffer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/router_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Python Homework RIT/ringbuffer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Python Homework RIT/ringbuffer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,6 +15,19 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Lab6$Unittests_for_router_test_TestRingBufferDS_test_init.coverage" NAME="Unittests for router_test.TestRingBufferDS.test_init Coverage Results" MODIFIED="1541124206985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Lab6$ListStack.coverage" NAME="ListStack Coverage Results" MODIFIED="1541126015019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Lab6$Unittests_for_router_test_TestRingBufferDS_test_insert.coverage" NAME="Unittests for router_test.TestRingBufferDS.test_insert Coverage Results" MODIFIED="1541124215916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Lab6$Unittests_for_router_test_TestCircularLinkedList.coverage" NAME="Unittests for router_test.TestCircularLinkedList Coverage Results" MODIFIED="1541120510570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Lab6$Unittests_for_router_test_TestRingBufferDS.coverage" NAME="Unittests for router_test.TestRingBufferDS Coverage Results" MODIFIED="1541125863665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Lab6$ring_buffer.coverage" NAME="ring_buffer Coverage Results" MODIFIED="1541126011003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Lab6$Unittests_for_router_test_TestRingBufferDS_test_remove.coverage" NAME="Unittests for router_test.TestRingBufferDS.test_remove Coverage Results" MODIFIED="1541124598494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Lab6$RingStack.coverage" NAME="RingStack Coverage Results" MODIFIED="1541124616494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Lab6$RingQueue.coverage" NAME="RingQueue Coverage Results" MODIFIED="1541124612475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Lab6$ListQueue.coverage" NAME="ListQueue Coverage Results" MODIFIED="1541126019775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Lab6$Unittests_in_router_test_py.coverage" NAME="Unittests in router_test.py Coverage Results" MODIFIED="1541126023812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-680482066">
@@ -51,14 +59,51 @@
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
     </session>
+    <session id="15883758">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="3823" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="3823" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts" />
+    </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ring_buffer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1632">
-              <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+            <state relative-caret-position="120">
+              <caret line="85" column="50" lean-forward="true" selection-start-line="161" selection-start-column="4" selection-end-line="163" selection-end-column="7" />
+              <folding>
+                <marker date="1541125855540" expanded="true" signature="1237:1243" ph="..." />
+                <marker date="1541125855540" expanded="true" signature="1362:1367" ph="..." />
+                <marker date="1541125855540" expanded="true" signature="2033:2084" ph="..." />
+                <marker date="1541125855540" expanded="true" signature="2611:2615" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,8 +111,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ListStack.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="44" column="40" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="44" selection-end-column="40" />
+            <state relative-caret-position="315">
+              <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -75,17 +120,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ListQueue.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+            <state relative-caret-position="480">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/router_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+            <state relative-caret-position="330">
+              <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -102,21 +147,34 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>set_data</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/router_test.py" />
+        <option value="$PROJECT_DIR$/ListStack.py" />
         <option value="$PROJECT_DIR$/ring_buffer.py" />
+        <option value="$PROJECT_DIR$/RingStack.py" />
+        <option value="$PROJECT_DIR$/RingQueue.py" />
+        <option value="$PROJECT_DIR$/router_test.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="714" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -126,7 +184,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -138,7 +195,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -152,7 +215,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ring_buffer">
+  <component name="RunManager" selected="Python tests.Unittests in router_test.py">
     <configuration name="ListQueue" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Lab6" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -165,7 +228,30 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ListQueue.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ListStack" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Lab6" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ListStack.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -186,6 +272,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ring_buffer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -195,7 +282,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for router_test.TestCircularLinkedList.test_insert_front" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for router_test.TestRingBufferDS" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="Lab6" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -204,12 +291,13 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;router_test.TestCircularLinkedList.test_insert_front&quot;" />
+      <option name="_new_target" value="&quot;router_test.TestRingBufferDS&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for router_test.TestCircularLinkedList.test_remove" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests in router_test.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="Lab6" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -218,39 +306,26 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;router_test.TestCircularLinkedList.test_remove&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for router_test.TestCircularLinkedList.test_str" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="Lab6" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;router_test.TestCircularLinkedList.test_str&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/router_test.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python tests.Unittests for router_test.TestCircularLinkedList.test_remove" />
-      <item itemvalue="Python tests.Unittests for router_test.TestCircularLinkedList.test_str" />
-      <item itemvalue="Python tests.Unittests for router_test.TestCircularLinkedList.test_insert_front" />
-      <item itemvalue="Python.ListQueue" />
+      <item itemvalue="Python tests.Unittests for router_test.TestRingBufferDS" />
       <item itemvalue="Python.ring_buffer" />
+      <item itemvalue="Python.ListStack" />
+      <item itemvalue="Python.ListQueue" />
+      <item itemvalue="Python tests.Unittests in router_test.py" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.ring_buffer" />
-        <item itemvalue="Python tests.Unittests for router_test.TestCircularLinkedList.test_remove" />
+        <item itemvalue="Python tests.Unittests in router_test.py" />
         <item itemvalue="Python.ListQueue" />
-        <item itemvalue="Python tests.Unittests for router_test.TestCircularLinkedList.test_str" />
-        <item itemvalue="Python tests.Unittests for router_test.TestCircularLinkedList.test_insert_front" />
+        <item itemvalue="Python.ListStack" />
+        <item itemvalue="Python.ring_buffer" />
+        <item itemvalue="Python tests.Unittests for router_test.TestRingBufferDS" />
       </list>
     </recent_temporary>
   </component>
@@ -268,88 +343,173 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_router_test_TestCircularLinkedList - 2018.11.01 at 08h 19m 55s.xml">
-      <configuration name="Unittests for router_test.TestCircularLinkedList" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_router_test_TestCircularLinkedList_test_remove - 2018.11.01 at 08h 56m 24s.xml">
-      <configuration name="Unittests for router_test.TestCircularLinkedList.test_remove" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_router_test_TestCircularLinkedList_test_str - 2018.11.01 at 08h 56m 39s.xml">
-      <configuration name="Unittests for router_test.TestCircularLinkedList.test_str" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_router_test_TestCircularLinkedList_test_insert_front - 2018.11.01 at 08h 58m 17s.xml">
-      <configuration name="Unittests for router_test.TestCircularLinkedList.test_insert_front" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_router_test_TestCircularLinkedList_test_insert_front - 2018.11.01 at 08h 58m 31s.xml">
-      <configuration name="Unittests for router_test.TestCircularLinkedList.test_insert_front" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_router_test_TestCircularLinkedList_test_str - 2018.11.01 at 09h 01m 15s.xml">
-      <configuration name="Unittests for router_test.TestCircularLinkedList.test_str" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_router_test_TestCircularLinkedList_test_remove - 2018.11.01 at 09h 22m 18s.xml">
-      <configuration name="Unittests for router_test.TestCircularLinkedList.test_remove" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_for_router_test_TestCircularLinkedList_test_remove - 2018.11.01 at 09h 30m 20s.xml">
       <configuration name="Unittests for router_test.TestCircularLinkedList.test_remove" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_for_router_test_TestCircularLinkedList - 2018.11.01 at 21h 01m 50s.xml">
+      <configuration name="Unittests for router_test.TestCircularLinkedList" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_router_test_TestRingBufferDS_test_insert - 2018.11.01 at 22h 02m 55s.xml">
+      <configuration name="Unittests for router_test.TestRingBufferDS.test_insert" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_router_test_TestRingBufferDS_test_init - 2018.11.01 at 22h 03m 27s.xml">
+      <configuration name="Unittests for router_test.TestRingBufferDS.test_init" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_router_test_TestRingBufferDS_test_insert - 2018.11.01 at 22h 03m 36s.xml">
+      <configuration name="Unittests for router_test.TestRingBufferDS.test_insert" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_router_test_TestRingBufferDS - 2018.11.01 at 22h 03m 57s.xml">
+      <configuration name="Unittests for router_test.TestRingBufferDS" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_router_test_TestRingBufferDS_test_remove - 2018.11.01 at 22h 06m 40s.xml">
+      <configuration name="Unittests for router_test.TestRingBufferDS.test_remove" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_router_test_TestRingBufferDS_test_remove - 2018.11.01 at 22h 09m 58s.xml">
+      <configuration name="Unittests for router_test.TestRingBufferDS.test_remove" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_router_test_TestRingBufferDS - 2018.11.01 at 22h 31m 03s.xml">
+      <configuration name="Unittests for router_test.TestRingBufferDS" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_router_test_py - 2018.11.01 at 22h 33m 44s.xml">
+      <configuration name="Unittests in router_test.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329718" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3987952" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="R Packages" />
-      <window_info anchor="right" id="R Graphics" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="SciView" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="R Graphics" order="3" />
+      <window_info anchor="right" id="R Packages" order="4" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>self.element[0].element</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.element[self._capacity - 2]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.element[self._capacity - 2].element</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.element[1]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.element[0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.element.__len__()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.element[2]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.element[3]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.capacity - 1</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/router_test.py">
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RingStack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+        <state relative-caret-position="264">
+          <caret line="78" column="7" lean-forward="true" selection-start-line="76" selection-start-column="4" selection-end-line="78" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RingQueue.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="7" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="15" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ring_buffer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="85" column="50" lean-forward="true" selection-start-line="161" selection-start-column="4" selection-end-line="163" selection-end-column="7" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1541125855540" expanded="true" signature="1237:1243" ph="..." />
+            <marker date="1541125855540" expanded="true" signature="1362:1367" ph="..." />
+            <marker date="1541125855540" expanded="true" signature="2033:2084" ph="..." />
+            <marker date="1541125855540" expanded="true" signature="2611:2615" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ListStack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="40" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="44" selection-end-column="40" />
+        <state relative-caret-position="315">
+          <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ListQueue.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+        <state relative-caret-position="480">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ring_buffer.py">
+    <entry file="file://$PROJECT_DIR$/router_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+        <state relative-caret-position="330">
+          <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
