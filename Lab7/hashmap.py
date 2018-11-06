@@ -1,5 +1,6 @@
 import re
 import sys
+
 __author__ = 'zjb'
 from collections import namedtuple
 
@@ -225,27 +226,24 @@ def testMap():
 
 
 def main():
-    arguments = sys.argv
-    if len(arguments) == 2:
-        file_name = arguments[1]
-        map = Hashmap(initsz=5, hashfunction_number=1)
-        with open(file_name) as f:
-            for line in f:
-                for key in re.findall('\w+', line):
-                    key = str(key).lower().strip()
-                    if map.contains(key):
-                        count = map.get(key)
-                        map.put(key, int(count) + 1)
-                    else:
-                        map.put(key, 1)
-        max = map.find_max()
-        print(map.contains(max))
-        print(max + " : " + map.get(max))
-        print("collision: ", map.collision)
-        print("probe: ", map.find_probe(max))
-        printMap(map)
-    else:
-        testMap()
+    map = Hashmap(initsz=5, hashfunction_number=1)
+    with open("test.txt") as f:
+        for line in f:
+            for key in re.findall(r'\w+', line):
+                key = str(key).lower().strip()
+                if map.contains(key):
+                    count = map.get(key)
+                    map.put(key, int(count) + 1)
+                else:
+                    map.put(key, 1)
+    max = map.find_max()
+    print(map.contains(max))
+    print(max + " : " + map.get(max))
+    print("collision: ", map.collision)
+    print("probe: ", map.find_probe(max))
+    printMap(map)
+
+    # testMap()
 
 
 if __name__ == '__main__':
