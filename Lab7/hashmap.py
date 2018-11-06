@@ -20,7 +20,7 @@ DELETED = Entry(_delobj(), None)
 
 
 class Hashmap:
-    __slots__ = 'table', 'numkeys', 'cap', 'maxload', 'collision', 'probesequence', 'hashfunction_number'
+    __slots__ = 'table', 'numkeys', 'cap', 'maxload', 'collision', 'probecount', 'hashfunction_number'
 
     def __init__(self, initsz=100, maxload=0.7, hashfunction_number=0):
         '''
@@ -33,7 +33,7 @@ class Hashmap:
         self.numkeys = 0
         self.maxload = maxload
         self.collision = 0
-        self.probesequence = []
+        self.probecount = 0
         self.hashfunction_number = hashfunction_number
 
     def put(self, key, value):
@@ -52,11 +52,11 @@ class Hashmap:
             probecount += 1
         if self.table[index] is None:
             self.numkeys += 1
-            self.probesequence.append(key + "@" + str(probecount + 1))
+            self.probecount += 1 + probecount
         self.table[index] = Entry(key, value)
         if self.numkeys / self.cap > self.maxload:
             # rehashing
-            self.probesequence = []
+            self.probecount = 0
             oldtable = self.table
             # refresh the table
             self.cap *= 2
@@ -95,10 +95,7 @@ class Hashmap:
                 index = 0
             probecount += 1
         if self.table[index] is not None:
-            for idx, item in enumerate(self.probesequence):
-                item = str(item).split("@")
-                if item[0].strip() == key.strip():
-                    self.probesequence[idx] = key + "@" + str(int(item[1].strip()) + probecount + 1)
+            self.probecount += 1 + probecount
             return str(self.table[index].value)
         else:
             raise KeyError('Key ' + str(key) + ' not present')
@@ -115,10 +112,8 @@ class Hashmap:
             index += 1
             if index == self.cap:
                 index = 0
-        for idx, item in enumerate(self.probesequence):
-            item = str(item).split("@")
-            if item[0].strip() == key.strip():
-                self.probesequence[idx] = key + "@" + str(int(item[1].strip()) + probecount + 1)
+            probecount += 1
+        self.probecount += 1 + probecount
         return self.table[index] is not None
 
     def find_max(self):
@@ -173,41 +168,9 @@ class Hashmap:
         return sum % self.cap
 
 
-def find_probe(map, max):
-    sumofprobes = 0
-    for item in map.probesequence:
-        sumofprobes += int(str(item).split("@")[1].strip())
-    return sumofprobes
-
 def printMap(map):
     for i in range(map.cap):
         print(str(i) + ": " + str(map.table[i]))
-
-
-def testMap():
-    output_list = "mango, mango, mango, mango, mango," \
-                  "\norange, orange, orange, orange, orange, " \
-                  "\nlol, lol,ki ki ki ki " \
-                  "\nman man man man man"
-    with open("hashtest.txt", "w") as output_file:
-        output_file.write(str(output_list))
-    # /usr/share/dict/words
-    map = Hashmap(initsz=5, hashfunction_number=1)
-    with open("hashtest.txt", encoding="utf8") as f:
-        for line in f:
-            for key in re.findall('\w+', line):
-                key = str(key).lower().strip()
-                if map.contains(key):
-                    count = map.get(key)
-                    map.put(key, int(count) + 1)
-                else:
-                    map.put(key, 1)
-    max = map.find_max()
-    print(max)
-    print(map.contains(max))
-    print(max + " : " + map.get(max))
-    print("collision: ", map.collision)
-    print("probe: ", find_probe(max))
 
 
 def main():
@@ -246,21 +209,21 @@ def main():
         max_python = map_python.find_max()
         print(max_python + " : " + map_python.get(max_python))
         print("collision: ", map_python.collision)
-        print("probe: ", find_probe(map_python, max_python))
+        print("probe: ", map_python.probecount)
         # my_hash1
         print("**********************************************************************************")
         print("my_hash1 Hash Function")
-        max_my_hash1 = map_python.find_max()
+        max_my_hash1 = map_my_hash1.find_max()
         print(max_my_hash1 + " : " + map_my_hash1.get(max_my_hash1))
         print("collision: ", map_my_hash1.collision)
-        print("probe: ", find_probe(map_my_hash1, max_my_hash1))
+        print("probe: ", map_my_hash1.probecount)
         # my_hash2
         print("**********************************************************************************")
         print("my_hash2 Hash Function")
-        max_my_hash2 = map_python.find_max()
+        max_my_hash2 = map_my_hash2.find_max()
         print(max_my_hash2 + " : " + map_my_hash2.get(max_my_hash2))
         print("collision: ", map_my_hash2.collision)
-        print("probe: ", find_probe(map_my_hash2, max_my_hash2))
+        print("probe: ", map_my_hash2.probecount)
     else:
         print("Argument must contain only input txt file name.")
 
