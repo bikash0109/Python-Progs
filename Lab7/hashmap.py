@@ -183,10 +183,17 @@ def main():
         map_python = Hashmap(initsz=5, hashfunction_number=0)
         map_my_hash1 = Hashmap(initsz=5, hashfunction_number=1)
         map_my_hash2 = Hashmap(initsz=5, hashfunction_number=2)
+        map_python_9 = Hashmap(initsz=5, maxload=0.9, hashfunction_number=0)
+        map_my_hash1_9 = Hashmap(initsz=5, maxload=0.9, hashfunction_number=1)
+        map_my_hash2_9 = Hashmap(initsz=5, maxload=0.9, hashfunction_number=2)
+        map_python_85 = Hashmap(initsz=5, maxload=0.85, hashfunction_number=0)
+        map_my_hash1_85 = Hashmap(initsz=5, maxload=0.85, hashfunction_number=1)
+        map_my_hash2_85 = Hashmap(initsz=5, maxload=0.85, hashfunction_number=2)
         with open(file_name, encoding="utf8") as f:
             for line in f:
                 for key in re.findall(r'\w+', line):
                     key = str(key).lower().strip()
+                    # for 0.7
                     if map_python.contains(key):
                         count = map_python.get(key)
                         map_python.put(key, int(count) + 1)
@@ -205,6 +212,45 @@ def main():
                     else:
                         map_my_hash2.put(key, 1)
 
+                    # for 0.9
+                    if map_python_9.contains(key):
+                        count = map_python_9.get(key)
+                        map_python_9.put(key, int(count) + 1)
+                    else:
+                        map_python_9.put(key, 1)
+                    # for my_hash1
+                    if map_my_hash1_9.contains(key):
+                        count = map_my_hash1_9.get(key)
+                        map_my_hash1_9.put(key, int(count) + 1)
+                    else:
+                        map_my_hash1_9.put(key, 1)
+                    # for my_hash2
+                    if map_my_hash2_9.contains(key):
+                        count = map_my_hash2_9.get(key)
+                        map_my_hash2_9.put(key, int(count) + 1)
+                    else:
+                        map_my_hash2_9.put(key, 1)
+
+                    # for 0.85
+                    if map_python_85.contains(key):
+                        count = map_python_85.get(key)
+                        map_python_85.put(key, int(count) + 1)
+                    else:
+                        map_python_85.put(key, 1)
+                    # for my_hash1
+                    if map_my_hash1_85.contains(key):
+                        count = map_my_hash1_85.get(key)
+                        map_my_hash1_85.put(key, int(count) + 1)
+                    else:
+                        map_my_hash1_85.put(key, 1)
+                    # for my_hash2
+                    if map_my_hash2_85.contains(key):
+                        count = map_my_hash2_85.get(key)
+                        map_my_hash2_85.put(key, int(count) + 1)
+                    else:
+                        map_my_hash2_85.put(key, 1)
+
+        print("With default load factor 0.7")
         print("Python Hash Function")
         max_python = map_python.find_max()
         print(max_python + " : " + map_python.get(max_python))
@@ -224,6 +270,48 @@ def main():
         print(max_my_hash2 + " : " + map_my_hash2.get(max_my_hash2))
         print("collision: ", map_my_hash2.collision)
         print("probe: ", map_my_hash2.probecount)
+
+        print("With default load factor 0.9")
+        print("Python Hash Function")
+        max_python = map_python_9.find_max()
+        print(max_python + " : " + map_python_9.get(max_python))
+        print("collision: ", map_python_9.collision)
+        print("probe: ", map_python_9.probecount)
+        # my_hash1
+        print("**********************************************************************************")
+        print("my_hash1 Hash Function")
+        max_my_hash1 = map_my_hash1_9.find_max()
+        print(max_my_hash1 + " : " + map_my_hash1_9.get(max_my_hash1))
+        print("collision: ", map_my_hash1_9.collision)
+        print("probe: ", map_my_hash1_9.probecount)
+        # my_hash2
+        print("**********************************************************************************")
+        print("my_hash2 Hash Function")
+        max_my_hash2 = map_my_hash2_9.find_max()
+        print(max_my_hash2 + " : " + map_my_hash2_9.get(max_my_hash2))
+        print("collision: ", map_my_hash2_9.collision)
+        print("probe: ", map_my_hash2_9.probecount)
+
+        print("With default load factor 0.85")
+        print("Python Hash Function")
+        max_python = map_python_85.find_max()
+        print(max_python + " : " + map_python_85.get(max_python))
+        print("collision: ", map_python_85.collision)
+        print("probe: ", map_python_85.probecount)
+        # my_hash1
+        print("**********************************************************************************")
+        print("my_hash1 Hash Function")
+        max_my_hash1 = map_my_hash1_85.find_max()
+        print(max_my_hash1 + " : " + map_my_hash1_85.get(max_my_hash1))
+        print("collision: ", map_my_hash1_85.collision)
+        print("probe: ", map_my_hash1_85.probecount)
+        # my_hash2
+        print("**********************************************************************************")
+        print("my_hash2 Hash Function")
+        max_my_hash2 = map_my_hash2_85.find_max()
+        print(max_my_hash2 + " : " + map_my_hash2_85.get(max_my_hash2))
+        print("collision: ", map_my_hash2_85.collision)
+        print("probe: ", map_my_hash2_85.probecount)
     else:
         print("Argument must contain only input txt file name.")
 
