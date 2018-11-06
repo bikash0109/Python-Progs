@@ -270,8 +270,9 @@ def main():
         print(max_my_hash2 + " : " + map_my_hash2.get(max_my_hash2))
         print("collision: ", map_my_hash2.collision)
         print("probe: ", map_my_hash2.probecount)
-
-        print("With default load factor 0.9")
+        print("**********************************************************************************")
+        print("**********************************************************************************")
+        print("With load factor 0.9")
         print("Python Hash Function")
         max_python = map_python_9.find_max()
         print(max_python + " : " + map_python_9.get(max_python))
@@ -291,8 +292,9 @@ def main():
         print(max_my_hash2 + " : " + map_my_hash2_9.get(max_my_hash2))
         print("collision: ", map_my_hash2_9.collision)
         print("probe: ", map_my_hash2_9.probecount)
-
-        print("With default load factor 0.85")
+        print("**********************************************************************************")
+        print("**********************************************************************************")
+        print("With load factor 0.85")
         print("Python Hash Function")
         max_python = map_python_85.find_max()
         print(max_python + " : " + map_python_85.get(max_python))
