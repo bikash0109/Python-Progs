@@ -132,11 +132,6 @@ class Hashmap:
                         a = value[0]
         return a
 
-    def find_probe(self, max):
-        for item in self.probesequence:
-            if str(item).split("@")[0].strip() == max.strip():
-                return str(item).replace("@", " - ")
-
     def hash_func(self, key):
         '''
         Not using Python's built in hash function here since we want to
@@ -178,72 +173,96 @@ class Hashmap:
         return sum % self.cap
 
 
+def find_probe(map, max):
+    sumofprobes = 0
+    for item in map.probesequence:
+        sumofprobes += int(str(item).split("@")[1].strip())
+    return sumofprobes
+
 def printMap(map):
     for i in range(map.cap):
         print(str(i) + ": " + str(map.table[i]))
 
 
 def testMap():
+    output_list = "mango, mango, mango, mango, mango," \
+                  "\norange, orange, orange, orange, orange, " \
+                  "\nlol, lol,ki ki ki ki " \
+                  "\nman man man man man"
+    with open("hashtest.txt", "w") as output_file:
+        output_file.write(str(output_list))
+    # /usr/share/dict/words
     map = Hashmap(initsz=5, hashfunction_number=1)
-    with open("/usr/share/dict/words") as f:
+    with open("hashtest.txt", encoding="utf8") as f:
         for line in f:
             for key in re.findall('\w+', line):
                 key = str(key).lower().strip()
-                print(key)
                 if map.contains(key):
                     count = map.get(key)
                     map.put(key, int(count) + 1)
                 else:
                     map.put(key, 1)
     max = map.find_max()
+    print(max)
     print(map.contains(max))
     print(max + " : " + map.get(max))
     print("collision: ", map.collision)
-    print("probe: ", map.find_probe(max))
-    printMap(map)
-
-    # map = Hashmap(initsz=5, hashfunction_number=1)
-    # map.put('apple', 1)
-    # map.put('banana', 2)
-    # map.put('orange', 15)
-    # printMap(map)
-    # print(map.contains('apple'))
-    # print(map.contains('grape'))
-    # print(map.get('orange'))
-    #
-    # print('--------- adding one more to force table resize ')
-    # map.put('grape', 7)
-    # printMap(map)
-    #
-    # print('--------- testing remove')
-    # map.remove('apple')
-    # printMap(map)
-    #
-    # print('--------- testing add to a DELETED location')
-    # map.put('peach', 16)
-    # printMap(map)
-    # print(map.get('grape'))
+    print("probe: ", find_probe(max))
 
 
 def main():
-    map = Hashmap(initsz=5, hashfunction_number=1)
-    with open("test.txt", encoding="utf8") as f:
-        for line in f:
-            for key in re.findall(r'\w+', line):
-                key = str(key).lower().strip()
-                if map.contains(key):
-                    count = map.get(key)
-                    map.put(key, int(count) + 1)
-                else:
-                    map.put(key, 1)
-    max = map.find_max()
-    print(map.contains(max))
-    print(max + " : " + map.get(max))
-    print("collision: ", map.collision)
-    print("probe: ", map.find_probe(max))
-    printMap(map)
+    arguments = sys.argv
+    if len(arguments) == 2:
+        file_name = arguments[1]
+        if ".txt" not in file_name:
+            print("file extension missing")
+            return
+        map_python = Hashmap(initsz=5, hashfunction_number=0)
+        map_my_hash1 = Hashmap(initsz=5, hashfunction_number=1)
+        map_my_hash2 = Hashmap(initsz=5, hashfunction_number=2)
+        with open(file_name, encoding="utf8") as f:
+            for line in f:
+                for key in re.findall(r'\w+', line):
+                    key = str(key).lower().strip()
+                    if map_python.contains(key):
+                        count = map_python.get(key)
+                        map_python.put(key, int(count) + 1)
+                    else:
+                        map_python.put(key, 1)
+                    # for my_hash1
+                    if map_my_hash1.contains(key):
+                        count = map_my_hash1.get(key)
+                        map_my_hash1.put(key, int(count) + 1)
+                    else:
+                        map_my_hash1.put(key, 1)
+                    # for my_hash2
+                    if map_my_hash2.contains(key):
+                        count = map_my_hash2.get(key)
+                        map_my_hash2.put(key, int(count) + 1)
+                    else:
+                        map_my_hash2.put(key, 1)
 
-    # testMap()
+        print("Python Hash Function")
+        max_python = map_python.find_max()
+        print(max_python + " : " + map_python.get(max_python))
+        print("collision: ", map_python.collision)
+        print("probe: ", find_probe(map_python, max_python))
+        # my_hash1
+        print("**********************************************************************************")
+        print("my_hash1 Hash Function")
+        max_my_hash1 = map_python.find_max()
+        print(max_my_hash1 + " : " + map_my_hash1.get(max_my_hash1))
+        print("collision: ", map_my_hash1.collision)
+        print("probe: ", find_probe(map_my_hash1, max_my_hash1))
+        # my_hash2
+        print("**********************************************************************************")
+        print("my_hash2 Hash Function")
+        max_my_hash2 = map_python.find_max()
+        print(max_my_hash2 + " : " + map_my_hash2.get(max_my_hash2))
+        print("collision: ", map_my_hash2.collision)
+        print("probe: ", find_probe(map_my_hash2, max_my_hash2))
+    else:
+        print("Argument must contain only input txt file name.")
 
 
 if __name__ == '__main__':
