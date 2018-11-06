@@ -188,6 +188,7 @@ def testMap():
         for line in f:
             for key in re.findall('\w+', line):
                 key = str(key).lower().strip()
+                print(key)
                 if map.contains(key):
                     count = map.get(key)
                     map.put(key, int(count) + 1)
