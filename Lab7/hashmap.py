@@ -227,7 +227,7 @@ def testMap():
 
 def main():
     map = Hashmap(initsz=5, hashfunction_number=1)
-    with open("test.txt") as f:
+    with open("test.txt", encoding="utf8") as f:
         for line in f:
             for key in re.findall(r'\w+', line):
                 key = str(key).lower().strip()
