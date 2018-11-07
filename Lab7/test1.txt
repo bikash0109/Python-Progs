@@ -1,5 +1,1 @@
-mango, mango, mango, mango, mango,
-orange, orange, orange,
-lol, lol,
-ki ki ki ki
-man man man man man
+mango, mango, mango, mango, mango
