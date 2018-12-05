@@ -178,10 +178,6 @@ def find_shortest_path(start_point, end_point):
                 dist[n] = dist[current] + 1
                 prev[n] = current
                 q.insert(n, dist[n])
-            if dist[current] + 1 < dist[n]:
-                dist[n] = dist[current] + 1
-                prev[n] = current
-                q.decreaseKey(n, dist[n])
     if end_point in dist:
         return retrace_old_path(start_point, end_point, prev)
     else:

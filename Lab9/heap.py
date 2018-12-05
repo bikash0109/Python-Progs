@@ -90,18 +90,6 @@ class Heap(object):
             else:
                 return ch2
 
-    def decreaseKey(self, item, newkey):
-        """
-        Assumes item in heap!  Will break if not!
-        Note that this assumes that the newKey will cause the
-        item to bubble UP not down.
-        :param item:  item in heap to have it's key decreased
-        :param newKey:  the new value of the key.
-        """
-        idx = self.itemIndex[item]
-        self.keys[idx] = newkey
-        self.__bubbleUp(idx)
-
     def insert(self, item, key=None):
         '''
         Inserts an item into the heap.
