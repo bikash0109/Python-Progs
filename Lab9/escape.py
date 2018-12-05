@@ -1,3 +1,9 @@
+'''
+escape.py
+This program creates a graph from
+text files, solves the graph to find the shortest path to exit.
+'''
+
 __author__ = 'Bikash Roy - br8376', 'Tanay Bhardwaj'
 
 import heap
@@ -154,7 +160,7 @@ def find_shortest_path(start_point, end_point):
     shortest paths.
     :param start_point:  the source node object
     :param end_point:    the destination node object
-    :return:           A list of node objects corresponding to the
+    :return:            List of node objects corresponding to the
                        shortest weighted path if a path exists.  Otherwise,
                        returns None.
     """
@@ -186,10 +192,10 @@ def find_shortest_path(start_point, end_point):
 
 def retrace_old_path(start, current, prev):
     """
-    :param start:    The source node.
-    :param current:  An intermediate node in the path.
-    :param prev:     A dictionary from nodes to previous nodes.
-    :return:         A list of node objects.
+    :param start:    Source node.
+    :param current:  A traversing node.
+    :param prev:     Dictionary from nodes to previous nodes.
+    :return:         List of nodes.
     """
     if current != start:
         v = prev[current]
@@ -221,18 +227,14 @@ def main():
     The main function.
     :return: None
     """
-
-    # Test number 1
     first_test = 'test1.txt'
     print("\n" + "Test 1: ")
     output(find_path(first_test))
 
-    # Test number 2
     second_test = 'test2.txt'
     print("\n" + "Test 2: ")
     output(find_path(second_test))
 
-    # Test number 3
     third_test = 'test3.txt'
     print("\n" + "Test 3: ")
     output(find_path(third_test))

@@ -8,87 +8,81 @@ class Heap(object):
     '''
     Heap that orders by a given comparison function, default to less-than.
     '''
-    __slots__ = ('data', 'size', 'lessfn', 'keys', 'itemIndex')
+    __slots__ = ('value', 'size', 'compare_value', 'keys', 'bucket')
 
-    def __init__(self, lessfn=lambda x, y: x < y):
+    def __init__(self, compare_value=lambda x, y: x < y):
         '''
         Constructor takes a comparison function.
-        :param lessfn: Function that takes in two keys and returns a boolean
+        :param compare_value: Function that takes in two keys and returns a boolean
         if the first arg goes higher in the heap than the second
         '''
-        self.data = []  # the array
-        self.size = 0  # the number of things in the heap
-        self.lessfn = lessfn  # the comparison function
-        self.itemIndex = {}  # hashmap from items to slots
-        self.keys = []  # parallel array for keys in data
+        self.value = []
+        self.size = 0
+        self.compare_value = compare_value
+        self.bucket = {}
+        self.keys = []
 
-    def __parent(self, loc):
+    def __root(self, pos):
         '''
         Helper function to compute the parent location of an index
-        :param loc: Index in the heap
+        :param pos: Index in the heap
         :return: Index of parent
         '''
-        return (loc - 1) // 2
+        return (pos - 1) // 2
 
-    def __bubbleUp(self, loc):
+    def __shuffle_up(self, pos):
         '''
-        Starts from the given location and moves the item at that spot
-        as far up the heap as necessary
-        :param loc: Place to start bubbling from
+        :param pos: start position
         '''
-        while loc > 0 and \
-                self.lessfn(self.keys[loc], self.keys[self.__parent(loc)]):
-            self.__swap(loc, self.__parent(loc))
-            loc = self.__parent(loc)
+        while pos > 0 and \
+                self.compare_value(self.keys[pos], self.keys[self.__root(pos)]):
+            self.__swap(pos, self.__root(pos))
+            pos = self.__root(pos)
 
     def __swap(self, i, j):
         """
-        Swap the items at position i and j, and their keys, and update itemIndex
+        Swap the items at position i and j, and their keys, and update bucket
         """
-        self.data[i], self.data[j] = self.data[j], self.data[i]
+        self.value[i], self.value[j] = self.value[j], self.value[i]
         self.keys[i], self.keys[j] = self.keys[j], self.keys[i]
-        self.itemIndex[self.data[i]] = i
-        self.itemIndex[self.data[j]] = j
+        self.bucket[self.value[i]] = i
+        self.bucket[self.value[j]] = j
 
-    def __bubbleDown(self, loc):
+    def __shuffle_down(self, pos):
         '''
-        Starts from the given location and moves the item at that spot
-        as far down the heap as necessary
-        :param loc: Place to start bubbling from
+        :param pos: start position
         '''
-        swapLoc = self.__smallest(loc)
-        while swapLoc != loc:
-            self.__swap(loc, swapLoc)
-            loc = swapLoc
-            swapLoc = self.__smallest(loc)
+        swap_pos = self.__smallest(pos)
+        while swap_pos != pos:
+            self.__swap(pos, swap_pos)
+            pos = swap_pos
+            swap_pos = self.__smallest(pos)
 
-    def __smallest(self, loc):
+    def __smallest(self, pos):
         '''
-        Finds the "smallest" value of loc and loc's two children.
-        Correctly handles end-of-heap issues.
-        :param loc: Index
+        Finds the "smallest" value of position and position's two children.
+        :param pos: Index
         :return: index of smallest value
         '''
-        ch1 = loc * 2 + 1
-        ch2 = loc * 2 + 2
-        if ch1 >= self.size:
-            return loc
-        if ch2 >= self.size:
-            if self.lessfn(self.keys[loc], self.keys[ch1]):
-                return loc
+        item1 = pos * 2 + 1
+        item2 = pos * 2 + 2
+        if item1 >= self.size:
+            return pos
+        if item2 >= self.size:
+            if self.compare_value(self.keys[pos], self.keys[item1]):
+                return pos
             else:
-                return ch1
-        # now consider all 3
-        if self.lessfn(self.keys[ch1], self.keys[ch2]):
-            if self.lessfn(self.keys[loc], self.keys[ch1]):
-                return loc
+                return item1
+        if self.compare_value(self.keys[item1], self.keys[item2]):
+            if self.compare_value(self.keys[pos], self.keys[item1]):
+                return pos
             else:
-                return ch1
+                return item1
         else:
-            if self.lessfn(self.keys[loc], self.keys[ch2]):
-                return loc
+            if self.compare_value(self.keys[pos], self.keys[item2]):
+                return pos
             else:
-                return ch2
+                return item2
 
     def insert(self, item, key=None):
         '''
@@ -99,34 +93,34 @@ class Heap(object):
         if key is None:
             key = item
 
-        if self.size < len(self.data):
-            self.data[self.size] = item
+        if self.size < len(self.value):
+            self.value[self.size] = item
             self.keys[self.size] = key
         else:
-            self.data.append(item)
+            self.value.append(item)
             self.keys.append(key)
         self.size += 1
-        self.itemIndex[item] = self.size - 1
-        self.__bubbleUp(self.size - 1)
+        self.bucket[item] = self.size - 1
+        self.__shuffle_up(self.size - 1)
 
     def pop(self):
         '''
         Removes and returns top of the heap
         :return: Item on top of the heap
         '''
-        retjob = self.data[0]
+        retjob = self.value[0]
         self.size -= 1
         # if we are popping the only element, assignment will fail,
         # but bubbling is unnecessary, so:
         if self.size > 0:
-            self.data[0] = self.data.pop(self.size)  # PYTHON LIST POP NOT HEAP POP
+            self.value[0] = self.value.pop(self.size)  # PYTHON LIST POP NOT HEAP POP
             self.keys[0] = self.keys.pop(self.size)
-            self.__bubbleDown(0)
+            self.__shuffle_down(0)
         return retjob
 
     def __len__(self):
         '''
-        Defining the "length" of a data structure also allows it to be
+        Defining the "length" of a value structure also allows it to be
         used as a boolean value!
         :return: size of heap
         '''
