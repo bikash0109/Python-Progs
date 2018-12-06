@@ -1,7 +1,7 @@
 '''
-escape.py
+escape_point.py
 This program creates a graph from
-text files, solves the graph to find the shortest path to exit.
+pond_data files, solves the graph to find the shortest path to exit.
 '''
 
 __author__ = 'Bikash Roy - br8376', 'Tanay Bhardwaj'
@@ -12,7 +12,7 @@ import sys
 
 class Point(object):
     """
-    This class is used to represent a point in a frozen pond puzzle in a graph representation of that puzzle.
+    This class is used to represent a point in a frozen pond pond_maze in a graph representation of that pond_maze.
     """
     __slots__ = 'row', 'column', 'left', 'right', 'up', 'down'
 
@@ -43,15 +43,12 @@ class Point(object):
 
 def find_path(file_name):
     """
-    This function builds a frozen pond puzzle and finds
+    This function builds a frozen pond_maze and prints
     the shortest paths for every point on the pond, if
     they exist.
     :param file_name: the name of the test file from
-                         which the puzzle shall be built
-    :return: A dictionary containing the points on the
-             frozen pond for which there is a path to
-             the exit, and a special list for points
-             with no path
+                         which the pond_maze shall be built
+    :return: None
     """
     all_possible_paths = {}
 
@@ -59,23 +56,45 @@ def find_path(file_name):
     with open(file_name) as file:
         # Get the lines of the file
         lines = file.readlines()
-
         numbers = lines[0].split()
-        height = int(numbers[0])
-        width = int(numbers[1])
-        escape = int(numbers[2])
+        pond_height = int(numbers[0])
+        pond_width = int(numbers[1])
+        escape_point = int(numbers[2])
+        pond_data = [[None for column in range(pond_width)] for row in range(pond_height)]
+        for line in range(pond_height):
+            pond_data[line] = list(lines[line + 1])
 
-        text = [[' ' for column in range(width)] for row in range(height)]
-        for line in range(height):
-            text[line] = list(lines[line + 1])
+    pond_maze = [[None for column in range(pond_width + 1)] for row in range(pond_height)]
+    for row in range(pond_height):
+        for column in range(pond_width):
+            if pond_data[row][column] == '.':
+                position = Point(row, column)
+                if column - 1 >= 0 and pond_data[row][column - 1] == '.':
+                    position.left = pond_maze[row][column - 1]
+                    if pond_maze[row][column - 1] is not None:
+                        pond_maze[row][column - 1].right = position
+                if column + 1 < pond_width and pond_data[row][column + 1] == '.':
+                    position.right = pond_maze[row][column + 1]
+                    if pond_maze[row][column + 1] is not None:
+                        pond_maze[row][column + 1].left = position
+                if row - 1 >= 0 and pond_data[row - 1][column] == '.':
+                    position.up = pond_maze[row - 1][column]
+                    if pond_maze[row - 1][column] is not None:
+                        pond_maze[row - 1][column].down = position
+                if row + 1 < pond_height and pond_data[row + 1][column] == '.':
+                    position.down = pond_maze[row + 1][column]
+                    if pond_maze[row + 1][column] is not None:
+                        pond_maze[row + 1][column].up = position
+                if column == pond_width - 1 and row == escape_point:
+                    pond_maze[escape_point][column + 1] = Point(escape_point, column + 1)
+                    position.right = pond_maze[escape_point][column + 1]
+                pond_maze[row][column] = position
 
-    puzzle = pond_graph(text, width, height, escape)
-
-    for column in range(width):
-        for row in range(height):
-            if puzzle[row][column] is not None:
-                start_point = puzzle[row][column]
-                end_point = puzzle[escape][width]
+    for column in range(pond_width):
+        for row in range(pond_height):
+            if pond_maze[row][column] is not None:
+                start_point = pond_maze[row][column]
+                end_point = pond_maze[escape_point][pond_width]
                 path = find_shortest_path(start_point, end_point)
                 if path is not None:
                     if all_possible_paths.get(len(path) - 1) is not None:
@@ -89,45 +108,17 @@ def find_path(file_name):
                     else:
                         all_possible_paths[0] = list()
                         all_possible_paths[0].append("(" + str(column) + ", " + str(row) + ")")
-    return all_possible_paths
-
-
-def pond_graph(pond_attribute, pond_width, pond_height, exit_path):
-    """
-    This function builds a 2d array of Point to make the graph of pond
-    :param pond_attribute: the text representing the puzzle as
-                       a 2d array of strings
-    :param: pond_width
-    :param: pond_height
-    :param: exit_path
-    :return: the 2d array of nodes that represents the puzzle
-    """
-    puzzle = [[None for column in range(pond_width + 1)] for row in range(pond_height)]
-    for row in range(pond_height):
-        for column in range(pond_width):
-            if pond_attribute[row][column] == '.':
-                position = Point(row, column)
-                if column - 1 >= 0 and pond_attribute[row][column - 1] == '.':
-                    position.left = puzzle[row][column - 1]
-                    if puzzle[row][column - 1] is not None:
-                        puzzle[row][column - 1].right = position
-                if column + 1 < pond_width and pond_attribute[row][column + 1] == '.':
-                    position.right = puzzle[row][column + 1]
-                    if puzzle[row][column + 1] is not None:
-                        puzzle[row][column + 1].left = position
-                if row - 1 >= 0 and pond_attribute[row - 1][column] == '.':
-                    position.up = puzzle[row - 1][column]
-                    if puzzle[row - 1][column] is not None:
-                        puzzle[row - 1][column].down = position
-                if row + 1 < pond_height and pond_attribute[row + 1][column] == '.':
-                    position.down = puzzle[row + 1][column]
-                    if puzzle[row + 1][column] is not None:
-                        puzzle[row + 1][column].up = position
-                if column == pond_width - 1 and row == exit_path:
-                    puzzle[exit_path][column + 1] = Point(exit_path, column + 1)
-                    position.right = puzzle[exit_path][column + 1]
-                puzzle[row][column] = position
-    return puzzle
+    # Print
+    if len(all_possible_paths) > 0:
+        keys = list(all_possible_paths.keys())
+        for i in keys:
+            if i != 0:
+                result = str(i) + ": " + str(all_possible_paths[i])
+                print(result)
+        result = "No path: " + str(all_possible_paths[keys[0]])
+        print(result)
+    else:
+        print("No starting square.")
 
 
 def slide(start, direction):
@@ -164,62 +155,43 @@ def find_shortest_path(start_point, end_point):
                        shortest weighted path if a path exists.  Otherwise,
                        returns None.
     """
-
-    dist = {}
-    dist[start_point] = 0
-    prev = {}
-    prev[start_point] = None
+    cost = dict()
+    cost[start_point] = 0
+    visited = dict()
+    visited[start_point] = None
     q = heap.Heap()
-    q.insert(start_point, dist[start_point])
+    q.insert(start_point, cost[start_point])
 
     while q:
         current = q.pop()
-        stops = list()
-        stops.append(slide(current, 'left'))
-        stops.append(slide(current, 'up'))
-        stops.append(slide(current, 'right'))
-        stops.append(slide(current, 'down'))
-        for n in stops:
-            if n not in dist:
-                dist[n] = dist[current] + 1
-                prev[n] = current
-                q.insert(n, dist[n])
-    if end_point in dist:
-        return retrace_old_path(start_point, end_point, prev)
+        steps = list()
+        steps.append(slide(current, 'left'))
+        steps.append(slide(current, 'up'))
+        steps.append(slide(current, 'right'))
+        steps.append(slide(current, 'down'))
+        for n in steps:
+            if n not in cost:
+                cost[n] = cost[current] + 1
+                visited[n] = current
+                q.insert(n, cost[n])
+    if end_point in cost:
+        return retrace_old_path(start_point, end_point, visited)
     else:
         return None
 
 
-def retrace_old_path(start, current, prev):
+def retrace_old_path(start, current, visited):
     """
     :param start:    Source node.
     :param current:  A traversing node.
-    :param prev:     Dictionary from nodes to previous nodes.
+    :param visited:     Dictionary from nodes to previous nodes.
     :return:         List of nodes.
     """
     if current != start:
-        v = prev[current]
-        return retrace_old_path(start, v, prev) + [current]
+        v = visited[current]
+        return retrace_old_path(start, v, visited) + [current]
     else:
         return [start]
-
-
-def output(paths):
-    """
-    This function prints out the results.
-    :param: paths
-    :return: None
-    """
-    if len(paths) > 0:
-        keys = list(paths.keys())
-        for i in keys:
-            if i != 0:
-                result = str(i) + ": " + str(paths[i])
-                print(result)
-        result = "No path: " + str(paths[keys[0]])
-        print(result)
-    else:
-        print("No starting square.")
 
 
 def main():
@@ -229,15 +201,15 @@ def main():
     """
     first_test = 'test1.txt'
     print("\n" + "Test 1: ")
-    output(find_path(first_test))
+    find_path(first_test)
 
     second_test = 'test2.txt'
     print("\n" + "Test 2: ")
-    output(find_path(second_test))
+    find_path(second_test)
 
     third_test = 'test3.txt'
     print("\n" + "Test 3: ")
-    output(find_path(third_test))
+    find_path(third_test)
 
     sys.exit(0)
 
