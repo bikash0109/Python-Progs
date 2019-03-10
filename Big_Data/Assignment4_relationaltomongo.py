@@ -101,13 +101,44 @@ for record in records:
     record.append(listToBeAppended)
     finalList.append(record)
 
-movie_dict = dict()
+directors = f'select movie_director.director, actor_movie_role.movie ' \
+        f'from movie_director ' \
+        f'where movie_director.movie in {movieidstuple}'
+cursor.execute(directors)
+directorsrecords = cursor.fetchall()
+for record in records:
+    record = list(record)
+    listToBeAppended = []
+    for directorItem in directorsrecords:
+        if record[0] == directorItem[2]:
+            listToBeAppended.append(directorItem[0:2])
+    record.append(listToBeAppended)
+    finalList.append(record)
 
 
-with open('movies.csv', 'w') as myfile:
-    wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
-    wr.writerow(finalList)
+movie_dict = []
+headers = []
+for elements in finalList:
+    mydict = {"_id": elements[0],
+              "type": elements[1],
+              "originaltitle": elements[2],
+              "startyear": elements[3],
+              "endyear": elements[4],
+              "runtime": elements[5],
+              "avgrating": elements[6],
+              "numvotes": elements[7],
+              "genres": elements[8],
+              "actor": elements[9]
+              }
+    print(mydict)
+    movie_dict.append(mydict)
+headers = mydict.keys()
+
+with open('movies.csv', 'w') as f:
+    w = csv.DictWriter(f, headers)
+    w.writeheader()
+    for row in movie_dict:
+        w.writerow(row)
 
 
-# for elements in finalList:
-#     print(elements)
+
