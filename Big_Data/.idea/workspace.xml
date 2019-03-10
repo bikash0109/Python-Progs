@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bce9a0a7-ed99-4bb5-9e86-6d0b89890ade" name="Default Changelist" comment="" />
+    <list default="true" id="bce9a0a7-ed99-4bb5-9e86-6d0b89890ade" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3_CreateTable.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3_Naive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3_Pruning.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment4_relationaltomongo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Big_Data.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Big_Data.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment2_LoadDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2_LoadDB.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,20 +20,42 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Big_Data$Assignment2_CreateIndex.coverage" NAME="Assignment2_CreateIndex Coverage Results" MODIFIED="1550377510725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Big_Data$Assignment2.coverage" NAME="Assignment2 Coverage Results" MODIFIED="1550722701974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Big_Data$tsvtosql.coverage" NAME="tsvtosql Coverage Results" MODIFIED="1549416154802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/Big_Data$Assignment2_CreateIndex.coverage" NAME="Assignment2_CreateIndex Coverage Results" MODIFIED="1550923375630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Big_Data$Assignment4_relationaltomongo.coverage" NAME="Assignment4_relationaltomongo Coverage Results" MODIFIED="1552188894622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Big_Data$dbtransaction.coverage" NAME="dbtransaction Coverage Results" MODIFIED="1549413611121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Big_Data$tsvtosql34.coverage" NAME="tsvtosql34 Coverage Results" MODIFIED="1549413485382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Big_Data$test.coverage" NAME="test Coverage Results" MODIFIED="1551216618016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Big_Data$Assignment2_queries.coverage" NAME="Assignment2_queries Coverage Results" MODIFIED="1550378637195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Big_Data$Assignment2.coverage" NAME="Assignment2 Coverage Results" MODIFIED="1550899944208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Big_Data$Assignment3_CreateTable.coverage" NAME="Assignment3_CreateTable Coverage Results" MODIFIED="1551142242989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Big_Data$Assignment3_Naive.coverage" NAME="Assignment3_Naive Coverage Results" MODIFIED="1551232749692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Big_Data$Assignment3_Pruning.coverage" NAME="Assignment3_Pruning Coverage Results" MODIFIED="1551237917608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Big_Data$tsvtosql.coverage" NAME="tsvtosql Coverage Results" MODIFIED="1549416154802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assignment2_LoadDB.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assignment4_relationaltomongo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="29" column="47" lean-forward="true" selection-start-line="49" selection-start-column="2" selection-end-line="327" selection-end-column="55" />
+            <state relative-caret-position="157">
+              <caret line="102" selection-start-line="102" selection-end-line="102" />
+              <folding>
+                <element signature="e#92#112#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/movies.csv">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assignment3_Naive.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-706">
+              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -30,53 +63,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assignment2_queries.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="28" selection-end-column="28" />
+            <state relative-caret-position="350">
+              <caret line="38" column="27" selection-start-line="37" selection-end-line="38" selection-end-column="27" />
+              <folding>
+                <element signature="e#150#165#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assignment2_CreateIndex.py">
+        <entry file="file://$PROJECT_DIR$/Assignment3_Pruning.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/title.principals.tsv">
-          <provider selected="true" editor-type-id="LargeFileEditor">
-            <state relative-caret-position="5805">
-              <caret line="387" column="46" selection-start-line="387" selection-start-column="34" selection-end-line="387" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/name.basics.tsv">
-          <provider selected="true" editor-type-id="LargeFileEditor">
-            <state relative-caret-position="123750">
-              <caret line="8250" column="14" selection-start-line="8250" selection-start-column="14" selection-end-line="8250" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/title.basics.tsv">
-          <provider selected="true" editor-type-id="LargeFileEditor">
-            <state relative-caret-position="242580">
-              <caret line="16172" column="24" selection-start-line="16172" selection-start-column="20" selection-end-line="16172" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/title.ratings.tsv">
-          <provider selected="true" editor-type-id="csv-text-editor">
-            <state>
-              <caret column="29" selection-start-column="21" selection-end-column="29" />
+            <state relative-caret-position="269">
+              <caret line="148" column="40" selection-start-line="148" selection-start-column="40" selection-end-line="148" selection-end-column="40" />
+              <folding>
+                <element signature="e#308#328#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,7 +98,38 @@
       <find>movies</find>
       <find>talk</find>
       <find>talk shows</find>
+      <find>db_connection</find>
+      <find>stripped_product</find>
+      <find>findCplus</find>
+      <find>nextlevel</find>
+      <find>stufftobedeletedfromlevel</find>
+      <find>dictCplus</find>
+      <find>thesets</find>
+      <find>l</find>
+      <find>finallistofFDs</find>
+      <find>a</find>
+      <find>level</find>
+      <find>find_func_depend_in_table</find>
+      <find>compute_dependencies</find>
+      <find>data2D</find>
+      <find>date_unit=&quot;ms&quot;,</find>
     </findStrings>
+    <replaceStrings>
+      <replace>cursor</replace>
+      <replace>stripped_partitions</replace>
+      <replace>get_next</replace>
+      <replace>invalid_partitions</replace>
+      <replace>tuple_mapping</replace>
+      <replace>subset_partitions</replace>
+      <replace>partition_index</replace>
+      <replace>functional_dependencies</replace>
+      <replace>partition</replace>
+      <replace>get_functional_dependency</replace>
+      <replace>DBData</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -105,16 +139,25 @@
         <option value="$PROJECT_DIR$/tsvtosql.py" />
         <option value="$PROJECT_DIR$/dbtransaction.py" />
         <option value="$PROJECT_DIR$/Assignment2.py" />
-        <option value="$PROJECT_DIR$/Assignment2_queries.py" />
         <option value="$PROJECT_DIR$/Assignment2_CreateIndex.py" />
         <option value="$PROJECT_DIR$/Assignment2_LoadDB.py" />
+        <option value="$PROJECT_DIR$/Assignment2_queries.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/ok" />
+        <option value="$PROJECT_DIR$/Assignment3_CreateTable.py" />
+        <option value="$PROJECT_DIR$/Assignment3_Naive.py" />
+        <option value="$PROJECT_DIR$/Assignment3_Pruning.py" />
+        <option value="$PROJECT_DIR$/Assignment4_relationaltomongo.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -143,12 +186,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Bikash\Documents\GitHub\Python-Progs\Big_Data" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -164,8 +209,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Assignment2">
-    <configuration name="Assignment2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.Assignment4_relationaltomongo">
+    <configuration name="Assignment3_CreateTable" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Big_Data" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -178,7 +223,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment2_LoadDB.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment3_CreateTable.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -187,7 +232,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Assignment2_CreateIndex" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Assignment3_Naive" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Big_Data" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -200,7 +245,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment2_CreateIndex.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment3_Naive.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -209,7 +254,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Assignment2_queries" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Assignment3_Pruning" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Big_Data" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -222,7 +267,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment2_queries.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment3_Pruning.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -231,7 +276,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="dbtransaction" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Assignment4_relationaltomongo" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Big_Data" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -244,7 +289,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dbtransaction.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment4_relationaltomongo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -253,21 +298,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tsvtosql" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Big_Data" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="/usr/local/bin/python3.7" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tsvtosql.py" />
-      <option name="PARAMETERS" value="title.basics.tsv title.ratings.tsv title.crew.tsv title.principals.tsv name.basics.tsv" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -276,19 +321,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.tsvtosql" />
-      <item itemvalue="Python.dbtransaction" />
-      <item itemvalue="Python.Assignment2" />
-      <item itemvalue="Python.Assignment2_queries" />
-      <item itemvalue="Python.Assignment2_CreateIndex" />
+      <item itemvalue="Python.Assignment3_CreateTable" />
+      <item itemvalue="Python.Assignment3_Naive" />
+      <item itemvalue="Python.Assignment3_Pruning" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.Assignment4_relationaltomongo" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Assignment2" />
-        <item itemvalue="Python.Assignment2_queries" />
-        <item itemvalue="Python.Assignment2_CreateIndex" />
-        <item itemvalue="Python.tsvtosql" />
-        <item itemvalue="Python.dbtransaction" />
+        <item itemvalue="Python.Assignment4_relationaltomongo" />
+        <item itemvalue="Python.Assignment3_Pruning" />
+        <item itemvalue="Python.Assignment3_Naive" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.Assignment3_CreateTable" />
       </list>
     </recent_temporary>
   </component>
@@ -310,22 +355,36 @@
       <workItem from="1550093275888" duration="10611000" />
       <workItem from="1550367478936" duration="5377000" />
       <workItem from="1550722672291" duration="107000" />
+      <workItem from="1550897928369" duration="885000" />
+      <workItem from="1550898920553" duration="2779000" />
+      <workItem from="1550932579372" duration="4619000" />
+      <workItem from="1550965101027" duration="5783000" />
+      <workItem from="1551024795474" duration="2585000" />
+      <workItem from="1551130033531" duration="1420000" />
+      <workItem from="1551139879052" duration="1578000" />
+      <workItem from="1551142222511" duration="2797000" />
+      <workItem from="1551192371096" duration="14113000" />
+      <workItem from="1551211511352" duration="24246000" />
+      <workItem from="1551816201379" duration="195000" />
+      <workItem from="1551816451408" duration="10848000" />
+      <workItem from="1551875758932" duration="637000" />
+      <workItem from="1552154227194" duration="19759000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81328000" />
+    <option name="totallyTimeSpent" value="173572000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1695279" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19509594" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.5614458" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.43770313" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -333,7 +392,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.5674699" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32827735" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -359,50 +418,54 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>line_movies[0]</expression-string>
+        <expression-string>newActorItem</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>line_names[5].split(',')</expression-string>
+        <expression-string>actoritem</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>line_names[5]</expression-string>
+        <expression-string>actoritem[0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>line.strip().split('\t')</expression-string>
+        <expression-string>record</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>line.strip().split(\t)</expression-string>
+        <expression-string>listToBeAppended</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>line.strip()</expression-string>
+        <expression-string>actorrecords[0][2]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>line.strip().split(&quot;\t&quot;)</expression-string>
+        <expression-string>actorrecords[0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>actorrecords</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>actor</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="309" selection-start-line="309" selection-end-line="309" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/codecs.py" />
     <entry file="file://$PROJECT_DIR$/title.crew.tsv">
       <provider selected="true" editor-type-id="LargeFileEditor" />
     </entry>
@@ -430,54 +493,136 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment2_LoadDB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="29" column="47" lean-forward="true" selection-start-line="49" selection-start-column="2" selection-end-line="327" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment2_queries.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assignment2_CreateIndex.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+        <state relative-caret-position="255">
+          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/title.principals.tsv">
       <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="5805">
+        <state relative-caret-position="6579">
           <caret line="387" column="46" selection-start-line="387" selection-start-column="34" selection-end-line="387" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/name.basics.tsv">
       <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="123750">
+        <state relative-caret-position="140250">
           <caret line="8250" column="14" selection-start-line="8250" selection-start-column="14" selection-end-line="8250" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/title.basics.tsv">
       <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="242580">
+        <state relative-caret-position="274924">
           <caret line="16172" column="24" selection-start-line="16172" selection-start-column="20" selection-end-line="16172" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/title.ratings.tsv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state>
-          <caret column="29" selection-start-column="21" selection-end-column="29" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resultsfile" />
+    <entry file="file://C:/Program Files (x86)/Python37-32/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="309" selection-start-line="309" selection-end-line="309" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resultsfile.csv" />
+    <entry file="file://$PROJECT_DIR$/ok">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="73" column="38" selection-start-line="71" selection-end-line="73" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/-1384526572/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="529" column="4" selection-start-line="529" selection-start-column="4" selection-end-line="529" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/actor_movie_role.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state>
+          <caret column="16" selection-start-column="12" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4950">
+          <caret line="201" selection-end-line="226" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chess.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment3_CreateTable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="25" column="1" selection-start-line="13" selection-end-line="25" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment2_LoadDB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3673">
+          <caret line="327" column="53" lean-forward="true" selection-start-line="327" selection-end-line="327" selection-end-column="53" />
+          <folding>
+            <element signature="e#146#161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment3_Pruning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="148" column="40" selection-start-line="148" selection-start-column="40" selection-end-line="148" selection-end-column="40" />
+          <folding>
+            <element signature="e#308#328#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment2_queries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="38" column="27" selection-start-line="37" selection-end-line="38" selection-end-column="27" />
+          <folding>
+            <element signature="e#150#165#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment3_Naive.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-706">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment4_relationaltomongo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
+          <folding>
+            <element signature="e#92#112#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movies.csv">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
