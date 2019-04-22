@@ -4,26 +4,22 @@ __author__ = 'BR'
 Author: BIKASH ROY
 
 File name: Assignment4_relationaltomongo.py
+Program to migrate data from Postgres to MongoDb
 """
-
-from pandas import *
-from collections import defaultdict
 import psycopg2
 import os
 from pymongo import MongoClient
-import pandas as pd
-import json
 import csv
+import time
+import gc
 
-# print("Creating imdb database in MongoDb")
-# client = MongoClient()
-# imdb = client["imdb"]
-# db = client.test
-# employee = db.employee
-# df = pd.read_csv("input.csv") #csv file which you want to import
-# records_ = df.to_dict(orient = 'records')
-# result = db.employee.insert_many(records_ )
+print("Creating imdb database in MongoDb")
+client = MongoClient()
+imdb = client["imdb_db"]
+moviecol = imdb["movies"]
+membercol = imdb["members"]
 
+print("Enter details for Postgres Connection")
 # host = input("Enter the db host name.")
 # dbname = input("Enter db name.")
 # port = input("Enter port number to connect to db")
@@ -31,114 +27,125 @@ import csv
 # password = input("Enter password")
 # make connection to the database
 connection = psycopg2.connect(
-    host="localhost",
-    dbname="imdb",
+    host='localhost',
+    dbname='imdb',
     port=5432,
-    user="postgres",
+    user='postgres',
     password=1234
 )
 cursor = connection.cursor()
 
 
-# def insert_records(filename, collection_name):
-# #     csv_file = open(filename, 'r')
-# #     reader = csv.DictReader(csv_file)
-# #     db = client.imdb
-# #     db.actor_movie_role.drop()
-# #     header = reader.fieldnames
-# #     for each in reader:
-# #         row = {}
-# #         for field in header:
-# #             row[field] = each[field]
-# #         db[collection_name].insert_one(row)
-# #
-# #
-# # print("Migrating actor_movie_role")
-# # question1 = 'select movie.movieid as _id, titletype as title, originaltitle, ' \
-# #             'coalesce(startyear, 0) as startyear, coalesce(endyear, 0) as endyear, ' \
-# #             'coalesce(runtimeminutes, 0) as runtime, coalesce(averagerating,0.0) as avgrating, ' \
-# #             'coalesce(numvotes, 0) as numvotes, coalesce(genres,\'\') as genres ' \
-# #             'from movie ' \
-# #             'join movie_genre on movie_genre.movieid = movie.movieid ' \
-# #             'join genre on genre.genreid = movie_genre.genreid'
-# # actor_movie_role = "COPY ({0}) TO STDOUT WITH CSV HEADER".format(question1)
-# # with open('movie.csv', 'w') as f:
-# #     cursor.copy_expert(actor_movie_role, f)
-# # actor_movie_role_col = imdb["movie"]
-# # insert_records("movie.csv", "movie")
+def insert_records(filename, collection_name):
+    csv_file = open(filename, 'r')
+    reader = csv.DictReader(csv_file)
+    db = client.imdb_db
+    db.collection_name.drop()
+    header = reader.fieldnames
+    for each in reader:
+        line = {}
+        for field in header:
+            line[field] = each[field]
+        db[collection_name].insert_one(line)
 
 
-movie = 'select movie.movieid as _id, titletype as title, originaltitle, startyear, endyear, runtimeminutes ' \
-        'as runtime, ' \
-        'averagerating as avgrating, numvotes, genres ' \
+st = time.time()
+print("Migrating movies")
+movie = 'select distinct on (movie.movieid) movie.movieid as _id, titletype as title, originaltitle, ' \
+        'coalesce(startyear, 0) as startyear, ' \
+        'coalesce(endyear, 0) as endyear, coalesce(runtimeminutes, 0) as runtime, ' \
+        'coalesce(averagerating, 0.0) as avgrating, coalesce(numvotes, 0.0) as numvotes, ' \
+        'coalesce(genres, \'\') as genres ' \
         'from movie ' \
         'join movie_genre on movie_genre.movieid = movie.movieid ' \
-        'join genre on genre.genreid = movie_genre.genreid ' \
-        'where startyear is not null ' \
-        'and endyear is not null ' \
-        'and runtimeminutes is not null ' \
-        'and averagerating is not null ' \
-        'and numvotes is not null ' \
-        'and genres is not null'
-cursor.execute(movie)
-records = cursor.fetchall()
-movieids = [item[0] for item in records]
-movieidstuple = tuple(movieids)
-actor = f'select actor_movie_role.actor, role.role, actor_movie_role.movie ' \
-        f'from actor_movie_role ' \
-        f'join role on role.roleid = actor_movie_role.role ' \
-        f'where role.role is not null and actor_movie_role.movie in {movieidstuple}'
-cursor.execute(actor)
-actorrecords = cursor.fetchall()
-
-finalList = []
-for record in records:
-    record = list(record)
-    listToBeAppended = []
-    for actoritem in actorrecords:
-        if record[0] == actoritem[2]:
-            listToBeAppended.append(actoritem[0:2])
-    record.append(listToBeAppended)
-    finalList.append(record)
-
-directors = f'select movie_director.director, actor_movie_role.movie ' \
-        f'from movie_director ' \
-        f'where movie_director.movie in {movieidstuple}'
-cursor.execute(directors)
-directorsrecords = cursor.fetchall()
-for record in records:
-    record = list(record)
-    listToBeAppended = []
-    for directorItem in directorsrecords:
-        if record[0] == directorItem[2]:
-            listToBeAppended.append(directorItem[0:2])
-    record.append(listToBeAppended)
-    finalList.append(record)
-
-
-movie_dict = []
-headers = []
-for elements in finalList:
-    mydict = {"_id": elements[0],
-              "type": elements[1],
-              "originaltitle": elements[2],
-              "startyear": elements[3],
-              "endyear": elements[4],
-              "runtime": elements[5],
-              "avgrating": elements[6],
-              "numvotes": elements[7],
-              "genres": elements[8],
-              "actor": elements[9]
-              }
-    print(mydict)
-    movie_dict.append(mydict)
-headers = mydict.keys()
-
+        'join genre on genre.genreid = movie_genre.genreid '
+movies_query = "COPY ({0}) TO STDOUT WITH CSV HEADER".format(movie)
 with open('movies.csv', 'w') as f:
-    w = csv.DictWriter(f, headers)
-    w.writeheader()
-    for row in movie_dict:
-        w.writerow(row)
+    cursor.copy_expert(movies_query, f)
+
+# cursor.execute(movie)
+movieids = []
+records = []
+with open('movies.csv') as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+    counter = 0
+    for row in csv_reader:
+        if counter > 0:
+            record = row
+            actor = f'select actor_movie_role.actor, actor_movie_role.role, actor_movie_role.movie ' \
+                    f'from actor_movie_role where actor_movie_role.movie = {row[0]} '
+            cursor.execute(actor)
+            actorrecords = cursor.fetchall()
+            rolerecords = []
+            if len(actorrecords) > 0:
+                role = f'select role.role ' \
+                       f'from role where role.roleid = {actorrecords[0][1]} '
+                cursor.execute(role)
+                rolerecords = cursor.fetchall()
+
+            print("Inserting Actors- Roles")
+            listActDict = []
+            actDict = {"actor": actorrecords[0] if len(actorrecords) > 0 else [],
+                       "roles": rolerecords[0] if len(rolerecords) > 0 else []}
+            record.append(listActDict.append(actDict))
+
+            print("Inserting Directors")
+            directors = f'select movie_director.director, movie_director.movie ' \
+                        f'from movie_director ' \
+                        f'where movie_director.movie = {row[0]}'
+            cursor.execute(directors)
+            directorsrecords = cursor.fetchall()
+            dirDict = tuple(directorsrecords[0] if len(directorsrecords) > 0 else [])
+            record.append(dirDict)
+
+            print("Inserting Writers")
+            writers = f'select movie_writer.writer, movie_writer.movie ' \
+                      f'from movie_writer ' \
+                      f'where movie_writer.movie = {row[0]}'
+            cursor.execute(writers)
+            writersrecords = cursor.fetchall()
+            wirDict = tuple(writersrecords[0] if len(writersrecords) > 0 else [])
+            record.append(wirDict)
+
+            print("Inserting producers")
+            producers = f'select movie_producer.producer, movie_producer.movie ' \
+                        f'from movie_producer ' \
+                        f'where movie_producer.movie = {row[0]}'
+            cursor.execute(writers)
+            producersrecords = cursor.fetchall()
+            prodDict = tuple(producersrecords[0] if len(producersrecords) > 0 else [])
+            record.append(prodDict)
+            mydict = {"_id": record[0],
+                      "type": record[1],
+                      "originaltitle": record[2],
+                      "startyear": record[3],
+                      "endyear": record[4],
+                      "runtime": record[5],
+                      "avgrating": record[6],
+                      "numvotes": record[7],
+                      "genres": record[8],
+                      "actor": record[9],
+                      "directors": record[10],
+                      "writers": record[11],
+                      "producers": record[12]
+                      }
+            moviecol.insert_one(mydict)
+        if counter == 0:
+            counter += 1
 
 
+print("Migrating members")
+question1 = 'select memberid as _id, name, birthyear, deathyear ' \
+            'from member ' \
+            'where birthyear is not null ' \
+            'and deathyear is not null'
+members_query = "COPY ({0}) TO STDOUT WITH CSV HEADER".format(question1)
+with open('members.csv', 'w') as f:
+    cursor.copy_expert(members_query, f)
+print("Commit members collection")
+insert_records("members.csv", "members")
 
+print("Deleting temp files")
+os.remove("movies.csv")
+os.remove("members.csv")
+print('Done.\n Executed in (sec):', time.time() - st)
