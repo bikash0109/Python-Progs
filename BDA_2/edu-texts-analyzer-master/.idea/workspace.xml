@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3e469590-92fd-48f9-bbba-73fda68c6ddf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../HW5/.idea/HW5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW5/d2016.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW5/heaps_law.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW5/zipfs_law.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distance_metrics_clustering.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/edu-texts-analyzer-master.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edu-texts-analyzer-master/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edu-texts-analyzer-master/Heaps.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edu-texts-analyzer-master/Zipf.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edu-texts-analyzer-master/book1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edu-texts-analyzer-master/book2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edu-texts-analyzer-master/d2015.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edu-texts-analyzer-master/d2016.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edu-texts-analyzer-master/license" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edu-texts-analyzer-master/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edu-texts-analyzer-master/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edu-texts-analyzer-master/zips_heaps_law.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/.idea/DSA.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/Bank.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/bst.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../k-mean-elbow.py" beforeDir="false" afterPath="$PROJECT_DIR$/../k-mean-elbow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DSA/Stack.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../DSA/Stack.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\Bikash\Documents\GitHub\Python-Progs\BDA_2\edu-texts-analyzer-master\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1TTUOcsPEuBUFPSbrqLWMuxltVY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Bikash\Documents\GitHub\Python-Progs\BDA_2\edu-texts-analyzer-master\edu-texts-analyzer-master" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Bikash\Documents\GitHub\Python-Progs\BDA_2\edu-texts-analyzer-master\edu-texts-analyzer-master\texts" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="index" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="edu-texts-analyzer-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/edu-texts-analyzer-master" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\Bikash\Documents\GitHub\Python-Progs\BDA_2\edu-texts-analyzer-master\edu-texts-analyzer-master\zips_heaps_law.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.index" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e469590-92fd-48f9-bbba-73fda68c6ddf" name="Default Changelist" comment="" />
+      <created>1573483547640</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573483547640</updated>
+      <workItem from="1573483548897" duration="198000" />
+      <workItem from="1573484177086" duration="5039000" />
+      <workItem from="1573503329263" duration="1664000" />
+      <workItem from="1573505031904" duration="1050000" />
+      <workItem from="1573506092568" duration="15219000" />
+      <workItem from="1581255561417" duration="36000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/edu_texts_analyzer_master$index.coverage" NAME="index Coverage Results" MODIFIED="1573521957910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/edu-texts-analyzer-master" />
+  </component>
+</project>

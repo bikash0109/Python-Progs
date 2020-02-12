@@ -1,96 +1,100 @@
+__author__ = 'BR'
+
+"""
+Author: BIKASH ROY
+
+File name: k-mean-elbow.py
+"""
+
+'''
+This python program is used to find the knee of 
+Squared_sum_error to K-means in a plot.
+'''
+
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import random as rd
-from Kmeans import Kmeans
+
+
+class Kmeans_class:
+    def __init__(self, dataset, K):
+        self.dataset = dataset
+        self.out_dict = {}
+        self.Centroids = np.array([]).reshape(self.dataset.shape[1], 0)
+        self.K = K
+        self.m = self.dataset.shape[0]
+
+    def process_centroid(self, dataset, K):
+        i = rd.randint(0, dataset.shape[0])
+        Centroid_temp = np.array([dataset[i]])
+        for k in range(1, K):
+            D = np.array([])
+            for x in dataset:
+                D = np.append(D, np.min(np.sum((x - Centroid_temp) ** 2)))
+            prob = D / np.sum(D)
+            cummulative_prob = np.cumsum(prob)
+            r = rd.random()
+            i = 0
+            for j, p in enumerate(cummulative_prob):
+                if r < p:
+                    i = j
+                    break
+            Centroid_temp = np.append(Centroid_temp, [dataset[i]], axis=0)
+        return Centroid_temp.T
+
+    def cal_distances(self, n_iter):
+        # randomly Initialize the centroids
+        self.Centroids = self.process_centroid(self.dataset, self.K)
+        # compute euclidian distances and assign clusters
+        for n in range(n_iter):
+            EuclidianDistance = np.array([]).reshape(self.m, 0)
+            for k in range(self.K):
+                tempDist = np.sum((self.dataset - self.Centroids[:, k]) ** 2, axis=1)
+                EuclidianDistance = np.c_[EuclidianDistance, tempDist]
+            C = np.argmin(EuclidianDistance, axis=1) + 1
+            # adjust the centroids
+            Y = {}
+            for k in range(self.K):
+                Y[k + 1] = np.array([]).reshape(2, 0)
+            for i in range(self.m):
+                Y[C[i]] = np.c_[Y[C[i]], self.dataset[i]]
+
+            for k in range(self.K):
+                Y[k + 1] = Y[k + 1].T
+            for k in range(self.K):
+                self.Centroids[:, k] = np.mean(Y[k + 1], axis=0)
+
+            self.out_dict = Y
+
+    def get_centroid_value(self):
+        return self.out_dict, self.Centroids.T
+
+    def SSE(self):
+        sse = 0
+        for k in range(self.K):
+            sse += np.sum((self.out_dict[k + 1] - self.Centroids[:, k]) ** 2)
+        return sse
+
 
 dataset = pd.read_csv('Clustering.csv', header=None, names=['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'])
 dataset.head()
 dataset[['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']].describe()
 
-X = dataset.iloc[:, [0, 9]].values
-print(X)
+dataset = dataset.iloc[:, [0, 9]].values
 
-m = X.shape[0]
-n = X.shape[1]
-
-n_iter = 100
-
-K=5
-
-Centroids=np.array([]).reshape(n,0)
-for i in range(K):
-    rand=rd.randint(0,m-1)
-    Centroids=np.c_[Centroids,X[rand]]
-Output={}
-EuclidianDistance=np.array([]).reshape(m,0)
-for k in range(K):
-    tempDist=np.sum((X-Centroids[:,k])**2,axis=1)
-    EuclidianDistance=np.c_[EuclidianDistance,tempDist]
-C=np.argmin(EuclidianDistance,axis=1)+1
-
-Y = {}
-for k in range(K):
-    Y[k + 1] = np.array([]).reshape(2, 0)
-for i in range(m):
-    Y[C[i]] = np.c_[Y[C[i]], X[i]]
-
-for k in range(K):
-    Y[k + 1] = Y[k + 1].T
-
-for k in range(K):
-    Centroids[:, k] = np.mean(Y[k + 1], axis=0)
-
-for i in range(n_iter):
-    # step 2.a
-    EuclidianDistance = np.array([]).reshape(m, 0)
+SSE_array = np.array([])
+for K in range(2, 22, 2):
+    kmeans = Kmeans_class(dataset, K)
+    kmeans.cal_distances(100)
+    out_dict, Centroids = kmeans.get_centroid_value()
+    sse = 0
     for k in range(K):
-        tempDist = np.sum((X - Centroids[:, k]) ** 2, axis=1)
-        EuclidianDistance = np.c_[EuclidianDistance, tempDist]
-    C = np.argmin(EuclidianDistance, axis=1) + 1
-    # step 2.b
-    Y = {}
-    for k in range(K):
-        Y[k + 1] = np.array([]).reshape(2, 0)
-    for i in range(m):
-        Y[C[i]] = np.c_[Y[C[i]], X[i]]
-
-    for k in range(K):
-        Y[k + 1] = Y[k + 1].T
-
-    for k in range(K):
-        Centroids[:, k] = np.mean(Y[k + 1], axis=0)
-    Output = Y
-
-plt.scatter(X[:,0],X[:,1],c='black',label='unclustered data')
-plt.xlabel('Income')
-plt.ylabel('Number of transactions')
-plt.legend()
-plt.title('Plot of data points')
-plt.show()
-
-color=['red','blue','green','cyan','magenta']
-labels=['cluster1','cluster2','cluster3','cluster4','cluster5']
-for k in range(K):
-    plt.scatter(Output[k+1][:,0],Output[k+1][:,1],c=color[k],label=labels[k])
-plt.scatter(Centroids[0,:],Centroids[1,:],s=300,c='yellow',label='Centroids')
-plt.xlabel('Income')
-plt.ylabel('Number of transactions')
-plt.legend()
-plt.show()
-
-WCSS_array=np.array([])
-for K in range(1,11):
-    kmeans=KMeans(X,K)
-    kmeans.fit(X)
-    Output,Centroids=kmeans.predict()
-    wcss=0
-    for k in range(K):
-        wcss+=np.sum((Output[k+1]-Centroids[k,:])**2)
-    WCSS_array=np.append(WCSS_array,wcss)
-K_array=np.arange(1,11,1)
-plt.plot(K_array,WCSS_array)
-plt.xlabel('Number of Clusters')
-plt.ylabel('within-cluster sums of squares (WCSS)')
-plt.title('Elbow method to determine optimum number of clusters')
+        sse += np.sum((out_dict[k + 1] - Centroids[k, :]) ** 2)
+    SSE_array = np.append(SSE_array, sse)
+K_array = np.arange(2, 22, 2)
+plt.plot(K_array, SSE_array)
+plt.xlabel('K')
+plt.ylabel('SSE')
+plt.title('K V/S SSE')
 plt.show()
